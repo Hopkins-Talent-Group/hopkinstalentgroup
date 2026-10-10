@@ -18,6 +18,13 @@ export default function SiteFooter() {
               {link.label}
             </a>
           ))}
+          <a
+            href="https://www.instagram.com/hopkinstalentgroup/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
         </div>
       </div>
     </footer>
