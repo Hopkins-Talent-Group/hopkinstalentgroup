@@ -161,11 +161,11 @@ export const site = {
     title: 'Gallery',
     /** GALLERY PHOTOS: drop the files in public/images and set the paths below. */
     images: [
-      { src: '/images/gallery-1.jpg', alt: 'Gallery photo' },
-      { src: '/images/gallery-2.jpg', alt: 'Gallery photo' },
-      { src: '/images/gallery-3.jpg', alt: 'Gallery photo' },
-      { src: '/images/gallery-4.jpg', alt: 'Gallery photo' },
-      { src: '/images/gallery-5.jpg', alt: 'Gallery photo' },
+      { src: '/images/gallery-1.webp', alt: 'Gallery photo' },
+      { src: '/images/gallery-2.webp', alt: 'Gallery photo' },
+      { src: '/images/gallery-3.png', alt: 'Gallery photo' },
+      { src: '/images/gallery-4.webp', alt: 'Gallery photo' },
+      { src: '/images/gallery-5.webp', alt: 'Gallery photo' },
     ],
   },
 
