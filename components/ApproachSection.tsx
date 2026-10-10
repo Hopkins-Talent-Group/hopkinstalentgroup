@@ -1,3 +1,4 @@
+import SmartImage from '@/components/SmartImage';
 import { site } from '@/data/site';
 
 const { approach } = site;
@@ -7,7 +8,7 @@ export default function ApproachSection() {
     <section className="section feature" id="approach">
       <div className="wrap feature-grid">
         <div className="feature-image">
-          <img src={approach.image.src} alt={approach.image.alt} />
+          <SmartImage src={approach.image.src} alt={approach.image.alt} />
           <div className="image-stamp">{approach.image.stamp}</div>
         </div>
         <div className="feature-copy">

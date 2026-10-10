@@ -1,4 +1,5 @@
 import SectionHeading from '@/components/SectionHeading';
+import SmartImage from '@/components/SmartImage';
 import { site } from '@/data/site';
 
 const { talent } = site;
@@ -16,7 +17,7 @@ export default function TalentSection() {
           {talent.artists.map((artist) => (
             <article className="artist-card" key={artist.name}>
               <div className="artist-photo">
-                <img src={artist.photo} alt={artist.alt} />
+                <SmartImage src={artist.photo} alt={artist.alt} />
                 <span className="artist-label">{artist.label}</span>
               </div>
               <div className="artist-info">

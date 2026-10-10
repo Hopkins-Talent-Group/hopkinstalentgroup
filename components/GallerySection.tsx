@@ -1,4 +1,5 @@
 import SectionHeading from '@/components/SectionHeading';
+import SmartImage from '@/components/SmartImage';
 import { site } from '@/data/site';
 
 const { gallery } = site;
@@ -11,7 +12,7 @@ export default function GallerySection() {
         <div className="gallery-grid">
           {gallery.images.map((image, index) => (
             <div className="gallery-item" key={`gallery-${index + 1}`}>
-              <img src={image.src} alt={image.alt} />
+              <SmartImage src={image.src} alt={image.alt} />
             </div>
           ))}
         </div>

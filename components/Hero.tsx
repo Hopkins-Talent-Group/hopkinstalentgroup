@@ -1,3 +1,4 @@
+import SmartImage from '@/components/SmartImage';
 import { site } from '@/data/site';
 
 const { hero } = site;
@@ -32,7 +33,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-visual">
-          <img src={hero.photo} alt={hero.photoAlt} />
+          <SmartImage src={hero.photo} alt={hero.photoAlt} />
           <div className="visual-tag">
             <div>
               <strong>{hero.photoTag.strong}</strong>

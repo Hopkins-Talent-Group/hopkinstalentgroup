@@ -43,8 +43,8 @@ export const site = {
       { strong: 'Live Entertainment', small: 'Events & appearances' },
       { strong: 'Talent Booking', small: 'New opportunities' },
     ],
-    /** OWNER PHOTO: replace with the owner's portrait URL. */
-    photo: 'ADD_YOUR_URL_HERE',
+    /** OWNER PHOTO: drop the file in public/images and set the path below. */
+    photo: '/images/owner.jpg',
     photoAlt: 'Hopkins Talent Group owner portrait',
     photoTag: {
       strong: 'Behind the talent. Beyond the stage.',
@@ -119,7 +119,7 @@ export const site = {
     ],
     cta: { label: 'Start a Conversation ↗', href: '#contact' },
     image: {
-      src: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1100&q=85',
+      src: '/images/photo-1470229722913-7c0e2dbbafd3.jpg',
       alt: 'Concert crowd with hands raised toward a brightly lit stage',
       stamp: 'The show is only the beginning',
     },
@@ -135,21 +135,21 @@ export const site = {
         name: 'Featured Artist',
         bio: 'Artist biography, genre, selected credits, and booking information will appear here.',
         label: 'Artist profile / placeholder',
-        photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=850&q=85',
+        photo: '/images/photo-1500648767791-00dcc994a43e.jpg',
         alt: 'Temporary stock portrait for an artist profile',
       },
       {
         name: 'Featured Talent',
         bio: "Introduce the artist's sound, style, live experience, and current opportunities.",
         label: 'Artist profile / placeholder',
-        photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=850&q=85',
+        photo: '/images/photo-1534528741775-53994a69daeb.jpg',
         alt: 'Temporary stock portrait for an artist profile',
       },
       {
         name: 'Featured Performer',
         bio: 'Highlight professional background, audience, notable work, and availability.',
         label: 'Artist profile / placeholder',
-        photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=850&q=85',
+        photo: '/images/photo-1506794778202-cad84cf45f1d.jpg',
         alt: 'Temporary stock portrait for an artist profile',
       },
     ],
@@ -159,13 +159,13 @@ export const site = {
   gallery: {
     kicker: 'Gallery',
     title: 'Gallery',
-    /** GALLERY PHOTOS: replace each src with your photo URL. */
+    /** GALLERY PHOTOS: drop the files in public/images and set the paths below. */
     images: [
-      { src: 'ADD_YOUR_URL_HERE', alt: 'Gallery photo' },
-      { src: 'ADD_YOUR_URL_HERE', alt: 'Gallery photo' },
-      { src: 'ADD_YOUR_URL_HERE', alt: 'Gallery photo' },
-      { src: 'ADD_YOUR_URL_HERE', alt: 'Gallery photo' },
-      { src: 'ADD_YOUR_URL_HERE', alt: 'Gallery photo' },
+      { src: '/images/gallery-1.jpg', alt: 'Gallery photo' },
+      { src: '/images/gallery-2.jpg', alt: 'Gallery photo' },
+      { src: '/images/gallery-3.jpg', alt: 'Gallery photo' },
+      { src: '/images/gallery-4.jpg', alt: 'Gallery photo' },
+      { src: '/images/gallery-5.jpg', alt: 'Gallery photo' },
     ],
   },
 

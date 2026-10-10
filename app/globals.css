@@ -586,10 +586,12 @@ h1 span {
 .gallery-item:after {
   content: none;
 }
-.gallery-item img[src="ADD_YOUR_URL_HERE"] {
-  opacity: 0;
+/* Image file not in public/images yet: keep a placeholder box. */
+.image-missing {
+  background: #182b40;
+  border: 1px dashed rgba(208, 173, 104, 0.55);
 }
-.gallery-item:has(img[src="ADD_YOUR_URL_HERE"]) {
+.gallery-item.image-missing {
   background: #e0ddd6;
   border: 1px dashed #b8b1a5;
 }
