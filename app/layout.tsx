@@ -21,10 +21,18 @@ const manrope = Manrope({
   variable: '--font-manrope',
 });
 
+const keithHopkinsFavicon =
+  'https://www.google.com/s2/favicons?domain=thekeithhopkins.com&sz=64';
+
 export const metadata: Metadata = {
   title: 'Hopkins Talent Group | Artist Management & Live Entertainment',
   description:
     'Artist management, live entertainment, talent booking, and event promotion by Hopkins Talent Group.',
+  icons: {
+    icon: keithHopkinsFavicon,
+    shortcut: keithHopkinsFavicon,
+    apple: keithHopkinsFavicon,
+  },
 };
 
 export const viewport: Viewport = {
