@@ -44,7 +44,7 @@ export const site = {
       { strong: 'Talent Booking', small: 'New opportunities' },
     ],
     /** OWNER PHOTO: drop the file in public/images and set the path below. */
-    photo: '/images/owner.jpg',
+    photo: '/images/hero.webp',
     photoAlt: 'Hopkins Talent Group owner portrait',
     photoTag: {
       strong: 'Behind the talent. Beyond the stage.',
@@ -161,11 +161,11 @@ export const site = {
     title: 'Gallery',
     /** GALLERY PHOTOS: drop the files in public/images and set the paths below. */
     images: [
-      { src: '/images/gallery-1.jpg', alt: 'Gallery photo' },
-      { src: '/images/gallery-2.jpg', alt: 'Gallery photo' },
-      { src: '/images/gallery-3.jpg', alt: 'Gallery photo' },
-      { src: '/images/gallery-4.jpg', alt: 'Gallery photo' },
-      { src: '/images/gallery-5.jpg', alt: 'Gallery photo' },
+      { src: '/images/gallery-1.webp', alt: 'Gallery photo' },
+      { src: '/images/gallery-2.webp', alt: 'Gallery photo' },
+      { src: '/images/gallery-3.webp', alt: 'Gallery photo' },
+      { src: '/images/gallery-4.webp', alt: 'Gallery photo' },
+      { src: '/images/gallery-5.webp', alt: 'Gallery photo' },
     ],
   },
 
