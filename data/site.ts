@@ -44,7 +44,7 @@ export const site = {
       { strong: 'Talent Booking', small: 'New opportunities' },
     ],
     /** OWNER PHOTO: drop the file in public/images and set the path below. */
-    photo: '/images/owner.jpg',
+    photo: '/images/hero.webp',
     photoAlt: 'Hopkins Talent Group owner portrait',
     photoTag: {
       strong: 'Behind the talent. Beyond the stage.',
