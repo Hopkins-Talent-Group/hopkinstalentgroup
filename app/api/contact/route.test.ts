@@ -260,6 +260,42 @@ describe('POST /api/contact — failure handling', () => {
     const response = await POST(makeRequest(validBody));
     expect(response.status).toBe(503);
   });
+
+  it('never logs raw exception messages on send failure', async () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    try {
+      sendInquiryMailMock.mockRejectedValueOnce(
+        new Error(
+          'connect ECONNREFUSED smtp-fake.internal.example.invalid:587 FAKE_PASS_DO_NOT_LOG_123',
+        ),
+      );
+      await POST(makeRequest(validBody));
+      const logged = spy.mock.calls.flat().map(String).join(' ');
+      expect(logged).not.toContain('smtp-fake.internal.example.invalid');
+      expect(logged).not.toContain('FAKE_PASS_DO_NOT_LOG_123');
+      expect(logged).not.toContain('ECONNREFUSED');
+      expect(logged).toContain('Inquiry mail send failed:');
+      expect(logged).toContain('Error');
+    } finally {
+      spy.mockRestore();
+    }
+  });
+
+  it('logs only the sanitized description for configuration errors', async () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    try {
+      sendInquiryMailMock.mockRejectedValueOnce(
+        new MailConfigError('SMTP configuration is incomplete'),
+      );
+      await POST(makeRequest(validBody));
+      expect(spy).toHaveBeenCalledWith(
+        'Inquiry mail not configured:',
+        'MailConfigError: SMTP configuration is incomplete',
+      );
+    } finally {
+      spy.mockRestore();
+    }
+  });
 });
 
 describe('POST /api/contact — client IP trust and rate limiting', () => {

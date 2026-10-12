@@ -73,7 +73,7 @@ export async function POST(request: Request): Promise<Response> {
     await sendInquiryMail(result.data);
   } catch (error) {
     if (error instanceof MailConfigError) {
-      console.error('Inquiry mail not configured:', error.message);
+      console.error('Inquiry mail not configured:', describeMailError(error));
       return json(503, {
         ok: false,
         error:

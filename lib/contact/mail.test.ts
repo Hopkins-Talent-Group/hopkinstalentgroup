@@ -195,7 +195,7 @@ describe('buildTransportOptions', () => {
   });
 });
 
-describe('describeMailError', () => {
+describe('describeMailError — log sanitization', () => {
   it('keeps only the error class and numeric code for SMTP failures', () => {
     const smtpError = Object.assign(new Error('535 auth failed secret stuff'), {
       name: 'SMTPError',
@@ -214,15 +214,111 @@ describe('describeMailError', () => {
     ).toContain('MailConfigError: SMTP configuration is incomplete');
   });
 
-  it('truncates unexpected error messages', () => {
-    const long = new Error('x'.repeat(1000));
-    const described = describeMailError(long);
-    expect(described.length).toBeLessThan(400);
+  it('never copies error messages containing a fake SMTP hostname or connection details', () => {
+    const error = new Error(
+      'connect ETIMEDOUT smtp-fake.internal.example.invalid:587 (10.9.8.7)',
+    );
+    const described = describeMailError(error);
+    expect(described).toBe('Error');
+    expect(described).not.toContain('smtp-fake.internal.example.invalid');
+    expect(described).not.toContain('10.9.8.7');
+    expect(described).not.toContain('587');
   });
 
-  it('handles non-object values', () => {
+  it('never copies fake credentials or connection strings from error messages', () => {
+    const credentialsError = new Error(
+      '535 auth failed for FAKE_USER_DO_NOT_LOG:FAKE_PASS_DO_NOT_LOG_123 at smtp://FAKE_USER_DO_NOT_LOG:FAKE_PASS_DO_NOT_LOG_123@mail-fake.invalid:587',
+    );
+    const describedCredentials = describeMailError(credentialsError);
+    expect(describedCredentials).toBe('Error');
+    expect(describedCredentials).not.toContain('FAKE_USER_DO_NOT_LOG');
+    expect(describedCredentials).not.toContain('FAKE_PASS_DO_NOT_LOG_123');
+    expect(describedCredentials).not.toContain('smtp://');
+  });
+
+  it('never copies a fake SMTP response body containing sensitive text', () => {
+    const error = Object.assign(new Error('response body echoed'), {
+      name: 'SMTPError',
+      response: '550 <FAKE_RECIPIENT_DO_NOT_LOG@invalid.example> FAKE_TOKEN_XYZ_987',
+      responseCode: 550,
+    });
+    const described = describeMailError(error);
+    expect(described).toBe('SMTPError responseCode=550');
+    expect(described).not.toContain('FAKE_RECIPIENT_DO_NOT_LOG');
+    expect(described).not.toContain('FAKE_TOKEN_XYZ_987');
+  });
+
+  it('never copies user-submitted message content embedded in an exception', () => {
+    const error = new Error(
+      'render failed: FAKE_USER_MESSAGE_CONTENT_DO_NOT_LOG hello there',
+    );
+    const described = describeMailError(error);
+    expect(described).toBe('Error');
+    expect(described).not.toContain('FAKE_USER_MESSAGE_CONTENT_DO_NOT_LOG');
+    expect(described).not.toContain('hello there');
+  });
+
+  it('never copies an arbitrary unexpected error message', () => {
+    expect(describeMailError(new Error('something exploded unexpectedly'))).toBe(
+      'Error',
+    );
+    expect(
+      describeMailError(new TypeError('cannot read property of undefined')),
+    ).toBe('TypeError');
+  });
+
+  it('never copies a long unexpected message', () => {
+    const described = describeMailError(new Error('x'.repeat(1000)));
+    expect(described).toBe('Error');
+    expect(described).not.toContain('x');
+  });
+
+  it('sanitizes a malformed error name instead of echoing it', () => {
+    const error = Object.assign(new Error('msg'), {
+      name: 'Evil <script> FAKE_NAME_DO_NOT_LOG',
+    });
+    expect(describeMailError(error)).toBe('Error');
+    const dotted = Object.assign(new Error('msg'), { name: 'a.b.c' });
+    expect(describeMailError(dotted)).toBe('Error');
+  });
+
+  it('keeps allowlisted error codes but drops malformed ones', () => {
+    const refused = Object.assign(new Error('connect failed'), {
+      code: 'ECONNREFUSED',
+    });
+    const described = describeMailError(refused);
+    expect(described).toBe('Error code=ECONNREFUSED');
+    expect(described).not.toContain('connect failed');
+
+    const poisoned = Object.assign(new Error('msg'), {
+      code: 'FAKE_SECRET_HOSTNAME.invalid',
+    });
+    expect(describeMailError(poisoned)).toBe('Error');
+  });
+
+  it('handles non-Error and malformed thrown values safely', () => {
     expect(describeMailError('plain string')).toBe('unknown error');
+    expect(describeMailError('FAKE_SECRET_IN_STRING_THROW')).toBe('unknown error');
+    expect(describeMailError(42)).toBe('unknown error');
     expect(describeMailError(null)).toBe('unknown error');
+    expect(describeMailError(undefined)).toBe('unknown error');
+    expect(describeMailError({ message: 'FAKE_SECRET_IN_OBJECT' })).toBe('Error');
+    expect(describeMailError({ name: 7, responseCode: 'not-a-number' })).toBe(
+      'Error',
+    );
+    expect(describeMailError(Number.NaN)).toBe('unknown error');
+  });
+
+  it('stays bounded and safe when property access throws', () => {
+    const trap = new Proxy(
+      {},
+      {
+        get() {
+          throw new Error('FAKE_SECRET_FROM_GETTER');
+        },
+      },
+    );
+    expect(describeMailError(trap)).toBe('unknown error');
   });
 });
 

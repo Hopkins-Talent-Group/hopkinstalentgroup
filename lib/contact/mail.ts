@@ -190,39 +190,54 @@ export function buildTransportOptions(config: MailConfig): SmtpTransportOptions 
 }
 
 /**
- * Produces a log-safe description of a send failure. SMTP server responses
- * (which may echo parts of the dialogue) and credentials are never included;
- * only the error class and numeric response code are kept for diagnostics.
+ * Produces a log-safe description of a send failure.
+ *
+ * Exception messages and SMTP response bodies are NEVER copied into the
+ * output: they can carry hostnames, connection details, credentials, or
+ * user-submitted content. Only controlled categories are returned — the
+ * allowlisted error class (sanitized), the numeric SMTP `responseCode`, and a
+ * pattern-allowlisted `code` token (e.g. `ECONNREFUSED`) — plus the
+ * `MailConfigError` message, which is authored in this module and contains
+ * only setting names and validated port numbers.
  */
+const SAFE_ERROR_NAME = /^[A-Za-z][A-Za-z0-9]{0,49}$/;
+const SAFE_ERROR_CODE = /^[A-Z0-9_]{1,32}$/;
+
 export function describeMailError(error: unknown): string {
-  if (error instanceof MailConfigError) {
-    return `MailConfigError: ${error.message}`;
-  }
-  if (error && typeof error === 'object') {
-    const candidate = error as {
-      name?: unknown;
-      response?: unknown;
-      responseCode?: unknown;
-    };
-    const name =
-      typeof candidate.name === 'string' && candidate.name
-        ? candidate.name
-        : 'Error';
-    if (
-      typeof candidate.response === 'string' ||
-      typeof candidate.responseCode === 'number'
-    ) {
-      const code =
-        typeof candidate.responseCode === 'number'
-          ? ` responseCode=${candidate.responseCode}`
-          : '';
-      return `${name}${code}`;
+  try {
+    if (error instanceof MailConfigError) {
+      return `MailConfigError: ${error.message}`;
     }
-    const message =
-      error instanceof Error && error.message ? error.message : '';
-    return message ? `${name}: ${message.slice(0, 300)}` : name;
+    if (error && typeof error === 'object') {
+      const candidate = error as {
+        name?: unknown;
+        code?: unknown;
+        response?: unknown;
+        responseCode?: unknown;
+      };
+      const name =
+        typeof candidate.name === 'string' && SAFE_ERROR_NAME.test(candidate.name)
+          ? candidate.name
+          : 'Error';
+      const parts = [name];
+      if (
+        typeof candidate.responseCode === 'number' &&
+        Number.isFinite(candidate.responseCode)
+      ) {
+        parts.push(`responseCode=${candidate.responseCode}`);
+      }
+      if (
+        typeof candidate.code === 'string' &&
+        SAFE_ERROR_CODE.test(candidate.code)
+      ) {
+        parts.push(`code=${candidate.code}`);
+      }
+      return parts.join(' ');
+    }
+    return 'unknown error';
+  } catch {
+    return 'unknown error';
   }
-  return 'unknown error';
 }
 
 export function escapeHtml(value: string): string {
