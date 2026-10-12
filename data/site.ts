@@ -196,6 +196,15 @@ export const site = {
         "Thank you — your inquiry has been sent. We'll be in touch soon.",
       errorMessage:
         'Something went wrong sending your inquiry. Please try again in a few minutes.',
+      validationMessage: 'Please review the form fields.',
+      rateLimitMessage:
+        'Too many submissions. Please wait a few minutes and try again.',
+      tooLargeMessage:
+        'Your inquiry is too long. Please shorten your message and try again.',
+      requestErrorMessage:
+        'The request could not be processed. Please try again.',
+      networkErrorMessage:
+        'We could not reach the server. Check your connection and try again.',
       inquiryTypes: [
         'Artist management',
         'Talent booking',

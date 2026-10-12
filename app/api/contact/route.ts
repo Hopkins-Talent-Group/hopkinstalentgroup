@@ -1,5 +1,7 @@
-import { MailConfigError, sendInquiryMail } from '@/lib/contact/mail';
-import { rateLimitAllows } from '@/lib/contact/rateLimit';
+import { getClientIpKey } from '@/lib/contact/clientIp';
+import { readJsonBody } from '@/lib/contact/bodyLimit';
+import { describeMailError, MailConfigError, sendInquiryMail } from '@/lib/contact/mail';
+import { parseRateLimitConfig, rateLimitAllows } from '@/lib/contact/rateLimit';
 import { validateInquiry } from '@/lib/contact/validation';
 
 export const runtime = 'nodejs';
@@ -12,38 +14,42 @@ function json(status: number, body: Record<string, unknown>): Response {
   });
 }
 
-function clientKey(request: Request): string {
-  const forwarded = request.headers.get('x-forwarded-for');
-  if (forwarded) {
-    const first = forwarded.split(',')[0]?.trim();
-    if (first) return first;
+function bodyError(status: 400 | 413 | 415): Response {
+  if (status === 413) {
+    return json(413, {
+      ok: false,
+      error: 'Request body is too large.',
+    });
   }
-  return request.headers.get('cf-connecting-ip') ?? 'unknown';
+  if (status === 415) {
+    return json(415, {
+      ok: false,
+      error: 'Unsupported content type. Send application/json.',
+    });
+  }
+  return json(400, { ok: false, error: 'Invalid request.' });
 }
 
 export async function POST(request: Request): Promise<Response> {
-  const limit = Number(process.env.CONTACT_RATE_LIMIT_MAX ?? 5);
-  const windowMs = Number(process.env.CONTACT_RATE_LIMIT_WINDOW_MS ?? 600_000);
+  const { max, windowMs } = parseRateLimitConfig();
 
-  if (!rateLimitAllows(clientKey(request), limit, windowMs)) {
+  if (!rateLimitAllows(getClientIpKey(request), max, windowMs)) {
     return json(429, {
       ok: false,
       error: 'Too many submissions from this device. Please try again later.',
     });
   }
 
-  let body: unknown;
-  try {
-    body = await request.json();
-  } catch {
+  const body = await readJsonBody(request);
+  if (!body.ok) {
+    return bodyError(body.status);
+  }
+
+  if (!body.value || typeof body.value !== 'object' || Array.isArray(body.value)) {
     return json(400, { ok: false, error: 'Invalid request.' });
   }
 
-  if (!body || typeof body !== 'object' || Array.isArray(body)) {
-    return json(400, { ok: false, error: 'Invalid request.' });
-  }
-
-  const payload = body as Record<string, unknown>;
+  const payload = body.value as Record<string, unknown>;
 
   const honeypot = payload.website;
   if (
@@ -74,10 +80,7 @@ export async function POST(request: Request): Promise<Response> {
           'Inquiry delivery is temporarily unavailable. Please try again later.',
       });
     }
-    console.error(
-      'Inquiry mail send failed:',
-      error instanceof Error ? error.message : error,
-    );
+    console.error('Inquiry mail send failed:', describeMailError(error));
     return json(502, {
       ok: false,
       error: 'We could not send your inquiry right now. Please try again shortly.',

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { site } from '@/data/site';
+import { submitInquiry } from '@/lib/contact/submit';
 
 const { form } = site.contact;
 
@@ -10,9 +11,11 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 export default function InquiryForm() {
   const [state, setState] = useState<SubmitState>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (state === 'submitting') return;
 
     const formElement = event.currentTarget;
     const data = new FormData(formElement);
@@ -27,36 +30,36 @@ export default function InquiryForm() {
 
     setState('submitting');
     setErrorMessage('');
+    setFieldErrors({});
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+    const result = await submitInquiry(payload);
 
-      if (response.ok) {
-        formElement.reset();
-        setState('success');
-        return;
-      }
-
-      let message = form.errorMessage;
-      try {
-        const body = (await response.json()) as { error?: unknown };
-        if (response.status === 429 && typeof body.error === 'string') {
-          message = body.error;
-        }
-      } catch {
-        // Keep the generic message when the body is not JSON.
-      }
-
-      setErrorMessage(message);
-      setState('error');
-    } catch {
-      setErrorMessage(form.errorMessage);
-      setState('error');
+    if (result.ok) {
+      formElement.reset();
+      setState('success');
+      return;
     }
+
+    setErrorMessage(result.message);
+    setFieldErrors(result.fieldErrors);
+    setState('error');
+  }
+
+  function renderFieldError(name: string) {
+    const message = fieldErrors[name];
+    if (!message) return null;
+    return (
+      <span className="field-error" id={`${name}-error`} role="alert">
+        {message}
+      </span>
+    );
+  }
+
+  function fieldA11y(name: string) {
+    return {
+      'aria-invalid': fieldErrors[name] ? true : undefined,
+      'aria-describedby': fieldErrors[name] ? `${name}-error` : undefined,
+    };
   }
 
   return (
@@ -74,7 +77,9 @@ export default function InquiryForm() {
               maxLength={100}
               autoComplete="name"
               placeholder="Your name"
+              {...fieldA11y('name')}
             />
+            {renderFieldError('name')}
           </div>
           <div className="field">
             <label htmlFor="email">Email address *</label>
@@ -86,17 +91,26 @@ export default function InquiryForm() {
               maxLength={254}
               autoComplete="email"
               placeholder="you@example.com"
+              {...fieldA11y('email')}
             />
+            {renderFieldError('email')}
           </div>
           <div className="field">
             <label htmlFor="inquiry">Inquiry type *</label>
-            <select id="inquiry" name="inquiry" required defaultValue={form.inquiryTypes[0]}>
+            <select
+              id="inquiry"
+              name="inquiry"
+              required
+              defaultValue={form.inquiryTypes[0]}
+              {...fieldA11y('inquiry')}
+            >
               {form.inquiryTypes.map((type) => (
                 <option value={type} key={type}>
                   {type}
                 </option>
               ))}
             </select>
+            {renderFieldError('inquiry')}
           </div>
           <div className="field">
             <label htmlFor="artist">Artist / company</label>
@@ -105,7 +119,9 @@ export default function InquiryForm() {
               name="artist"
               maxLength={150}
               placeholder="If applicable"
+              {...fieldA11y('artist')}
             />
+            {renderFieldError('artist')}
           </div>
           <div className="field full">
             <label htmlFor="message">Tell us about it *</label>
@@ -115,7 +131,9 @@ export default function InquiryForm() {
               required
               maxLength={5000}
               placeholder="Share your goals, event details, opportunity, or project..."
+              {...fieldA11y('message')}
             />
+            {renderFieldError('message')}
           </div>
           <div className="honeypot" aria-hidden="true">
             <label htmlFor="website">Website</label>

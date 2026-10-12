@@ -767,6 +767,11 @@ h1 span {
   line-height: 1.6;
   margin-top: 14px;
 }
+.field-error {
+  color: #b3524b;
+  font-size: 10px;
+  line-height: 1.4;
+}
 .honeypot {
   position: absolute;
   left: -9999px;

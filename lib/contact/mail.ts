@@ -26,11 +26,55 @@ export interface InquiryDetails {
   message: string;
 }
 
-function optionalFlag(value: string | undefined, fallback: boolean): boolean {
-  if (value === undefined || value.trim() === '') return fallback;
-  return value.trim().toLowerCase() === 'true';
+export interface SmtpTransportOptions {
+  host: string;
+  port: number;
+  secure: boolean;
+  requireTLS: boolean;
+  auth: { user: string; pass: string };
+  connectionTimeout: number;
+  greetingTimeout: number;
+  socketTimeout: number;
+  tls: { rejectUnauthorized: true };
 }
 
+export const SMTP_TIMEOUTS_MS = {
+  connectionTimeout: 10_000,
+  greetingTimeout: 10_000,
+  socketTimeout: 20_000,
+} as const;
+
+const HOST_PATTERN =
+  /^(?=.{1,253}$)(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)*[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?$/;
+const EMAIL_PATTERN = /^[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,<>]+$/;
+const MAX_EMAIL_LENGTH = 254;
+
+function parseStrictBoolean(
+  raw: string | undefined,
+  name: string,
+): boolean | undefined {
+  if (raw === undefined || raw.trim() === '') return undefined;
+  const value = raw.trim().toLowerCase();
+  if (value === 'true' || value === '1') return true;
+  if (value === 'false' || value === '0') return false;
+  throw new MailConfigError(`${name} must be "true" or "false".`);
+}
+
+/**
+ * Validates SMTP settings from the environment.
+ *
+ * TLS matrix:
+ * - Port 465: implicit TLS (`secure: true`). `SMTP_SECURE=false` is rejected;
+ *   `SMTP_REQUIRE_TLS` must not be enabled.
+ * - Port 587: STARTTLS with a mandatory upgrade (`requireTls: true`).
+ *   `SMTP_SECURE=true` and `SMTP_REQUIRE_TLS=false` are rejected — no
+ *   plaintext fallback.
+ * - Any other port (e.g. local Mailpit on 1025) requires BOTH `SMTP_SECURE`
+ *   and `SMTP_REQUIRE_TLS` to be set explicitly; nothing is assumed.
+ *
+ * Certificate verification stays enabled (`rejectUnauthorized: true`); it is
+ * never disabled by this module.
+ */
 export function getMailConfig(
   env: Record<string, string | undefined> = process.env,
 ): MailConfig {
@@ -46,15 +90,139 @@ export function getMailConfig(
     );
   }
 
-  const port = Number(env.SMTP_PORT ?? 587);
-  if (!Number.isInteger(port) || port < 1 || port > 65535) {
-    throw new MailConfigError('SMTP_PORT must be a valid TCP port.');
+  if (!HOST_PATTERN.test(host)) {
+    throw new MailConfigError(
+      'SMTP_HOST must be a plain hostname without spaces or special characters.',
+    );
+  }
+  if (/[\r\n]/.test(user)) {
+    throw new MailConfigError('SMTP_USER contains invalid characters.');
+  }
+  if (from.length > MAX_EMAIL_LENGTH || !EMAIL_PATTERN.test(from)) {
+    throw new MailConfigError('CONTACT_FROM_EMAIL must be a valid email address.');
+  }
+  if (to.length > MAX_EMAIL_LENGTH || !EMAIL_PATTERN.test(to)) {
+    throw new MailConfigError('CONTACT_TO_EMAIL must be a valid email address.');
   }
 
-  const secure = optionalFlag(env.SMTP_SECURE, port === 465);
-  const requireTls = optionalFlag(env.SMTP_REQUIRE_TLS, !secure);
+  const rawPort =
+    env.SMTP_PORT === undefined || env.SMTP_PORT.trim() === ''
+      ? '587'
+      : env.SMTP_PORT.trim();
+  const port = Number(rawPort);
+  if (!Number.isInteger(port) || port < 1 || port > 65535) {
+    throw new MailConfigError('SMTP_PORT must be a valid TCP port (1-65535).');
+  }
+
+  const secure = parseStrictBoolean(env.SMTP_SECURE, 'SMTP_SECURE');
+  const requireTls = parseStrictBoolean(
+    env.SMTP_REQUIRE_TLS,
+    'SMTP_REQUIRE_TLS',
+  );
+
+  if (port === 465) {
+    if (secure === false) {
+      throw new MailConfigError(
+        'SMTP_SECURE=false is not valid with implicit TLS on port 465. Remove SMTP_SECURE or set it to true.',
+      );
+    }
+    if (requireTls === true) {
+      throw new MailConfigError(
+        'SMTP_REQUIRE_TLS must not be enabled with implicit TLS (port 465).',
+      );
+    }
+    return {
+      host,
+      port,
+      secure: true,
+      requireTls: false,
+      user,
+      pass,
+      from,
+      to,
+    };
+  }
+
+  if (port === 587) {
+    if (secure === true) {
+      throw new MailConfigError(
+        'SMTP_SECURE=true (implicit TLS) is not valid on port 587. Use port 465 for implicit TLS, or leave SMTP_SECURE=false for STARTTLS.',
+      );
+    }
+    if (requireTls === false) {
+      throw new MailConfigError(
+        'Refusing plaintext SMTP on port 587. Set SMTP_REQUIRE_TLS=true, or use port 465 for implicit TLS.',
+      );
+    }
+    return {
+      host,
+      port,
+      secure: false,
+      requireTls: true,
+      user,
+      pass,
+      from,
+      to,
+    };
+  }
+
+  if (secure === undefined || requireTls === undefined) {
+    throw new MailConfigError(
+      `Non-standard SMTP port ${port} requires explicit SMTP_SECURE and SMTP_REQUIRE_TLS settings (local Mailpit example: SMTP_SECURE=false, SMTP_REQUIRE_TLS=false).`,
+    );
+  }
 
   return { host, port, secure, requireTls, user, pass, from, to };
+}
+
+export function buildTransportOptions(config: MailConfig): SmtpTransportOptions {
+  return {
+    host: config.host,
+    port: config.port,
+    secure: config.secure,
+    requireTLS: config.requireTls,
+    auth: { user: config.user, pass: config.pass },
+    connectionTimeout: SMTP_TIMEOUTS_MS.connectionTimeout,
+    greetingTimeout: SMTP_TIMEOUTS_MS.greetingTimeout,
+    socketTimeout: SMTP_TIMEOUTS_MS.socketTimeout,
+    tls: { rejectUnauthorized: true },
+  };
+}
+
+/**
+ * Produces a log-safe description of a send failure. SMTP server responses
+ * (which may echo parts of the dialogue) and credentials are never included;
+ * only the error class and numeric response code are kept for diagnostics.
+ */
+export function describeMailError(error: unknown): string {
+  if (error instanceof MailConfigError) {
+    return `MailConfigError: ${error.message}`;
+  }
+  if (error && typeof error === 'object') {
+    const candidate = error as {
+      name?: unknown;
+      response?: unknown;
+      responseCode?: unknown;
+    };
+    const name =
+      typeof candidate.name === 'string' && candidate.name
+        ? candidate.name
+        : 'Error';
+    if (
+      typeof candidate.response === 'string' ||
+      typeof candidate.responseCode === 'number'
+    ) {
+      const code =
+        typeof candidate.responseCode === 'number'
+          ? ` responseCode=${candidate.responseCode}`
+          : '';
+      return `${name}${code}`;
+    }
+    const message =
+      error instanceof Error && error.message ? error.message : '';
+    return message ? `${name}: ${message.slice(0, 300)}` : name;
+  }
+  return 'unknown error';
 }
 
 export function escapeHtml(value: string): string {
@@ -112,13 +280,7 @@ export async function sendInquiryMail(
   details: InquiryDetails,
   config: MailConfig = getMailConfig(),
 ): Promise<void> {
-  const transport = nodemailer.createTransport({
-    host: config.host,
-    port: config.port,
-    secure: config.secure,
-    requireTLS: config.requireTls,
-    auth: { user: config.user, pass: config.pass },
-  });
+  const transport = nodemailer.createTransport(buildTransportOptions(config));
 
   await transport.sendMail({
     from: `"Hopkins Talent Group" <${config.from}>`,
