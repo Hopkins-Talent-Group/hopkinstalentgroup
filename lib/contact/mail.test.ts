@@ -320,6 +320,34 @@ describe('describeMailError — log sanitization', () => {
     );
     expect(describeMailError(trap)).toBe('unknown error');
   });
+
+  it('handles revoked proxies without crashing or leaking', () => {
+    const { proxy, revoke } = Proxy.revocable(
+      {},
+      {
+        get() {
+          return 'FAKE_SECRET_FROM_REVOKED_PROXY';
+        },
+      },
+    );
+    revoke();
+    expect(describeMailError(proxy)).toBe('unknown error');
+  });
+
+  it('drops non-finite response codes instead of logging them', () => {
+    const nanError = Object.assign(new Error('msg'), {
+      name: 'SMTPError',
+      responseCode: Number.NaN,
+    });
+    expect(describeMailError(nanError)).toBe('SMTPError');
+    const infinityError = Object.assign(new Error('msg'), {
+      name: 'SMTPError',
+      responseCode: Number.POSITIVE_INFINITY,
+    });
+    const described = describeMailError(infinityError);
+    expect(described).toBe('SMTPError');
+    expect(described).not.toContain('Infinity');
+  });
 });
 
 describe('message builders', () => {
