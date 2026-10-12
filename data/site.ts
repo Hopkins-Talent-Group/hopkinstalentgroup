@@ -12,13 +12,6 @@ export const site = {
     copyrightName: 'Hopkins Talent Group',
   },
 
-  /**
-   * Where the inquiry form hands off to. Leave empty to keep the demo
-   * behaviour (validate only, nothing is sent). Set an address to enable
-   * the mailto handoff, e.g. 'hello@hopkinstalentgroup.com'.
-   */
-  inquiryRecipientEmail: '',
-
   navLinks: [
     { label: 'What We Do', href: '#services' },
     { label: 'Our Approach', href: '#approach' },
@@ -196,11 +189,22 @@ export const site = {
     form: {
       title: 'Submit an inquiry',
       intro: "Give us the essentials. We'll take it from there.",
-      submitLabel: 'Prepare Inquiry',
-      note: 'Prototype form: submissions are not transmitted or stored. Connect the form to a secure backend or form service before publishing.',
-      successNoRecipient:
-        'Your inquiry details have been validated. Add the confirmed agency email address in the code to enable email handoff. Nothing has been sent or stored by this demo.',
-      successWithRecipient: 'Opening your email app to send the inquiry.',
+      submitLabel: 'Send Inquiry',
+      submittingLabel: 'Sending…',
+      note: 'Inquiries are sent directly to our team and used only to respond to you.',
+      successMessage:
+        "Thank you — your inquiry has been sent. We'll be in touch soon.",
+      errorMessage:
+        'Something went wrong sending your inquiry. Please try again in a few minutes.',
+      validationMessage: 'Please review the form fields.',
+      rateLimitMessage:
+        'Too many submissions. Please wait a few minutes and try again.',
+      tooLargeMessage:
+        'Your inquiry is too long. Please shorten your message and try again.',
+      requestErrorMessage:
+        'The request could not be processed. Please try again.',
+      networkErrorMessage:
+        'We could not reach the server. Check your connection and try again.',
       inquiryTypes: [
         'Artist management',
         'Talent booking',

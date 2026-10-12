@@ -758,6 +758,32 @@ h1 span {
   line-height: 1.6;
   margin-top: 14px;
 }
+.form-error {
+  padding: 14px;
+  background: #f9eeed;
+  border-left: 3px solid #b3524b;
+  color: #6b2a24;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+.field-error {
+  color: #b3524b;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.btn[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
 .footer {
   background: #050e18;
   color: white;
