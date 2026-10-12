@@ -5,34 +5,58 @@ import { site } from '@/data/site';
 
 const { form } = site.contact;
 
-export default function InquiryForm() {
-  const [status, setStatus] = useState('');
+type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+export default function InquiryForm() {
+  const [state, setState] = useState<SubmitState>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const data = new FormData(event.currentTarget);
-    const recipient = site.inquiryRecipientEmail;
-    const subject = encodeURIComponent(`HTG inquiry — ${data.get('inquiry')}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${data.get('name')}`,
-        `Email: ${data.get('email')}`,
-        `Inquiry: ${data.get('inquiry')}`,
-        `Artist / Company: ${data.get('artist') || 'Not provided'}`,
-        '',
-        'Details:',
-        data.get('message'),
-      ].join('\n'),
-    );
+    const formElement = event.currentTarget;
+    const data = new FormData(formElement);
+    const payload = {
+      name: String(data.get('name') ?? ''),
+      email: String(data.get('email') ?? ''),
+      inquiry: String(data.get('inquiry') ?? ''),
+      artist: String(data.get('artist') ?? ''),
+      message: String(data.get('message') ?? ''),
+      website: String(data.get('website') ?? ''),
+    };
 
-    if (recipient) {
-      setStatus(form.successWithRecipient);
-      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-      return;
+    setState('submitting');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        formElement.reset();
+        setState('success');
+        return;
+      }
+
+      let message = form.errorMessage;
+      try {
+        const body = (await response.json()) as { error?: unknown };
+        if (response.status === 429 && typeof body.error === 'string') {
+          message = body.error;
+        }
+      } catch {
+        // Keep the generic message when the body is not JSON.
+      }
+
+      setErrorMessage(message);
+      setState('error');
+    } catch {
+      setErrorMessage(form.errorMessage);
+      setState('error');
     }
-
-    setStatus(form.successNoRecipient);
   }
 
   return (
@@ -47,6 +71,7 @@ export default function InquiryForm() {
               id="name"
               name="name"
               required
+              maxLength={100}
               autoComplete="name"
               placeholder="Your name"
             />
@@ -58,6 +83,7 @@ export default function InquiryForm() {
               name="email"
               type="email"
               required
+              maxLength={254}
               autoComplete="email"
               placeholder="you@example.com"
             />
@@ -74,7 +100,12 @@ export default function InquiryForm() {
           </div>
           <div className="field">
             <label htmlFor="artist">Artist / company</label>
-            <input id="artist" name="artist" placeholder="If applicable" />
+            <input
+              id="artist"
+              name="artist"
+              maxLength={150}
+              placeholder="If applicable"
+            />
           </div>
           <div className="field full">
             <label htmlFor="message">Tell us about it *</label>
@@ -82,17 +113,34 @@ export default function InquiryForm() {
               id="message"
               name="message"
               required
+              maxLength={5000}
               placeholder="Share your goals, event details, opportunity, or project..."
             />
           </div>
+          <div className="honeypot" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
         </div>
-        <button className="btn" type="submit">
-          {form.submitLabel} <span>↗</span>
+        <button className="btn" type="submit" disabled={state === 'submitting'}>
+          {state === 'submitting' ? form.submittingLabel : form.submitLabel}{' '}
+          <span>↗</span>
         </button>
         <p className="form-note">{form.note}</p>
-        {status ? (
-          <div className="success" role="status" style={{ display: 'block' }}>
-            {status}
+        {state === 'success' ? (
+          <div className="success" role="status">
+            {form.successMessage}
+          </div>
+        ) : null}
+        {state === 'error' ? (
+          <div className="form-error" role="alert">
+            {errorMessage}
           </div>
         ) : null}
       </form>
