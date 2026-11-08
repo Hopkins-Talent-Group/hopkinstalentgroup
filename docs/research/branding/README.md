@@ -3,19 +3,26 @@
 > **Project:** Hopkins Talent Group (HTG)  
 > **Research record:** HTG-STR-001  
 > **Iteration:** Strategy Iteration 01  
-> **Revision:** 1  
+> **Revision:** 2  
 > **Status:** Proposed strategic baseline — pending business verification and stakeholder approval  
-> **Source of truth:** [GitHub Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)
+> **Governance:** [GitHub Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)  
+> **Companion standard:** [Visual Engineering Design Standard](../visual-engineering/VISUAL_DESIGN_STANDARD.md)
 
 ---
 
-## 1. Purpose
+## 1. Purpose, authority, and use
 
-This document consolidates the strategic research that should guide HTG's brand identity, logo exploration, visual system, website experience, and design handoff.
+This document consolidates the strategic research that guides HTG brand identity, logo exploration, visual system, website experience, and design handoff. It is a research baseline, not an approved legal description, final positioning statement, or authorization to publish every service or relationship described below.
 
-It is a working research record, not an approved legal description, final positioning statement, or authorization to publish every service or relationship described below. Where facts remain unverified, they are explicitly marked **TBD — do not invent**.
+**Authority order**
+1. Explicitly approved HTG business facts and decisions recorded by the authorized approver.
+2. Approved project specifications and evidence linked from Issue #10.
+3. This research document, which remains proposed until its relevant decisions are verified and approved.
+4. Exploratory concepts, mockups, and working assumptions, which must never override an approved source.
 
-The goal is to build an identity that communicates the real structure and value of HTG with clarity, confidence, precision, and trust. The goal is not to imitate conventional luxury branding or make the business appear expensive through visual effects.
+Issue #10 currently identifies approval authority as a blocker. No approver or fallback is assumed. Formal approval remains blocked until Keith assigns the authorized approver(s). Until then, work may proceed only where independent of unresolved decisions, with visible placeholders; dependent work remains blocked or provisional.
+
+Use **TBD — do not invent** for facts, values, behavior, or permissions that lack an approved source. Preserve superseded material as historical context, but never allow it to override a newer approved decision.
 
 ## 2. Strategic foundation
 
@@ -30,19 +37,19 @@ The goal is to build an identity that communicates the real structure and value 
 
 ### 2.2 Strategic hierarchy
 
-The following hierarchy is a working model. It must not be interpreted as a verified corporate ownership chart.
+This is a working model, not a verified corporate ownership chart:
 
 1. **Keith Hopkins — personal authority and relationships.** The human connector and source of professional context.
 2. **Hopkins Talent Group — central platform.** The primary business identity through which the ecosystem is presented.
 3. **Operating businesses and relationships — ecosystem participants.** Each must be accurately classified before public presentation.
 4. **Services and opportunities — entry points.** The specific needs that bring customers, partners, artists, or investors into contact with HTG.
-5. **Network — connected value.** Relevant introductions, collaborations, and adjacent opportunities where real and authorized.
+5. **Network — connected value.** Relevant introductions and collaborations only where real and authorized.
 
-### 2.3 Relationship classification requirement
+HTG's identity, assets, content, and ownership context must remain distinct from the designer/developer's personal or studio identity. Do not place the designer's brand inside HTG identity or imply that the designer owns HTG.
 
-Do not describe a named venture, platform, or partner as an HTG subsidiary or owned company unless that relationship is confirmed.
+### 2.3 Relationship classification and visual integrity
 
-Each named entity must be classified as one of the following before it appears in public-facing brand or website content:
+Do not describe a named venture, platform, or partner as an HTG subsidiary or owned company unless confirmed. Each named entity must be classified before appearing in public-facing content:
 
 - HTG-owned business
 - HTG operating brand
@@ -54,9 +61,26 @@ Each named entity must be classified as one of the following before it appears i
 
 Names referenced in the initial strategy include Renegade Staging, ComparePower, BLUETTI, and AI Projects. Their precise relationship to HTG is **TBD — do not invent**. Do not imply endorsement, ownership, partnership, or permission to use marks without confirmation.
 
-## 3. Capability architecture
+**Visual treatment requirements**
+- Define a distinct and consistent visual grammar for each relationship class in Sheet 03.
+- Use an endorsed/owned treatment only when ownership and endorsement are verified.
+- Present partners, clients, and referral opportunities with explicit, approved relationship labels and disclosure/qualifier slots.
+- Use text-only labels or neutral placeholders when logo permission or relationship status is unknown.
+- Mark projects under development as such; never style them as launched operating businesses.
+- Never let proximity, shared containers, lockups, or visual hierarchy imply a relationship that has not been verified.
+- Test the HTG logo beside third-party marks in Sheet 02 without implying affiliation.
+
+## 3. Capability architecture and delivery classification
 
 The initial strategy groups the proposed ecosystem into four capability areas. These are strategic groupings, not confirmation that every service is currently active, licensed, available in every location, or offered directly by HTG.
+
+For every individual service, record one delivery status:
+- **HTG direct** — delivered by HTG itself.
+- **Operating business** — delivered by a named operating business; name and relationship must be verified.
+- **Third-party referral/partner** — delivered by an independent provider; relationship and permitted claims must be verified.
+- **Not yet confirmed** — no public delivery claim; use TBD.
+
+Do not infer one status for an entire pillar. A pillar may contain services with different delivery models.
 
 ### 3.1 Insurance, Credit & Energy
 
@@ -66,12 +90,7 @@ Proposed scope:
 - Financing
 - Texas residential and commercial energy
 
-Verification required:
-- Active services and actual provider/operator
-- Geographic and eligibility limits
-- Licensing, regulatory, and disclosure requirements
-- Approved claims and descriptions
-- Lead ownership and destination
+Verify active services, actual provider/operator, geography and eligibility, licensing and regulatory requirements, disclosures, approved claims, lead ownership, and destination. Do not imply HTG directly provides regulated services unless verified.
 
 ### 3.2 Marketing & Sales
 
@@ -82,11 +101,7 @@ Proposed scope:
 - Lead generation
 - Appointment setting
 
-Verification required:
-- Services delivered directly versus through third parties
-- Target customer types and industries
-- Scope, deliverables, and performance representations
-- Approved case studies, results, and proof
+Verify direct versus third-party delivery, target customer types, scope and deliverables, performance representations, approved case studies, and proof.
 
 ### 3.3 Websites, AI & Business
 
@@ -97,11 +112,7 @@ Proposed scope:
 - AI agents and automation
 - Consulting
 
-Verification required:
-- Current delivery capabilities
-- Platforms and integrations actually supported
-- Service boundaries and support responsibilities
-- Approved examples and technical claims
+Verify current delivery capabilities, supported platforms/integrations, service boundaries, support responsibilities, and approved examples/technical claims.
 
 ### 3.4 Artists, Events & Connections
 
@@ -111,251 +122,253 @@ Proposed scope:
 - Event staging and barricades
 - Investor introductions
 
-Verification required:
-- Representation, booking, and promotion responsibilities
-- Event service availability and operating partners
-- Investor introduction process and eligibility
-- Any compensation, referral, or success-fee terms
-- Permission to publish artist, event, or investor references
+Verify representation, booking and promotion responsibilities, event availability and operating partners, investor introduction process and eligibility, compensation/referral/success-fee terms, and permissions to publish references.
 
-## 4. Priority audiences and journey principles
+## 4. Audiences and provisional priority
 
-### 4.1 Businesses and homeowners
+The following is a working prioritization hypothesis for design exploration, **not an approved business priority**. Keith must confirm the ranking, the primary first-screen audience, and whether investors receive a dedicated top-level pathway.
 
-**Likely need:** Access to practical solutions such as energy, credit, financing, marketing, or operational support.
+| Provisional order | Audience | Likely needs | Capability mapping to test | Journey principle |
+|---|---|---|---|---|
+| 1 | Businesses & homeowners | Energy, credit, financing, marketing, operational support | Insurance, Credit & Energy; Marketing & Sales; Websites, AI & Business | Identify the relevant service, explain who delivers it, route to the correct verified destination |
+| 2 | Sales & referral partners | Credible network, collaboration expectations, transparent referral terms | Cross-pillar; exact fit depends on partner offer | Explain qualification, process, and terms; do not promise commissions or earnings without approved written terms |
+| 3 | Independent artists & managers | Promotion, representation, booking, EPK support, staging, connections | Artists, Events & Connections; selected marketing capabilities if verified | Separate artist-facing paths from general business services; distinguish direct services from introductions |
+| 4 | Investors | Relevant business opportunities and introductions | Connections and any verified opportunity | Avoid implying investment advice, guaranteed access, vetted opportunities, or a formal investor network without substantiation |
 
-**Experience principle:** Make the relevant service easy to identify, explain what HTG does versus what a provider does, and route the inquiry to the correct destination.
+For each audience, Sheet 04 must map: audience → need → verified capability → delivery status → proposed message → approved CTA → verified destination. No audience pathway is considered operational until its service, owner, contact destination, and next step are confirmed.
 
-### 4.2 Sales and referral partners
-
-**Likely need:** A credible network, clear collaboration expectations, and transparent referral terms.
-
-**Experience principle:** Explain the relationship and next step plainly. Do not promise commissions, earnings, or partner status until written terms and processes are approved.
-
-### 4.3 Independent artists and managers
-
-**Likely need:** Promotion, representation, booking, EPK support, staging, or access to relevant connections.
-
-**Experience principle:** Separate artist-facing pathways from general business services. Clearly distinguish services HTG provides from introductions or third-party services.
-
-### 4.4 Investors
-
-**Likely need:** Relevant business opportunities and introductions.
-
-**Experience principle:** Avoid implying investment advice, guaranteed access, vetted opportunities, or a formal investor network unless those claims and processes are substantiated and approved.
-
-## 5. Brand positioning
+## 5. Positioning and messaging layer
 
 ### 5.1 Proposed positioning statement
 
-**Working statement — not approved public copy:**
+**Working statement — proposed and unapproved:**
 
-Hopkins Talent Group connects people, businesses, services, and opportunities through a coordinated business network, helping each audience find a relevant point of entry and the right next connection.
+> Hopkins Talent Group connects people, businesses, services, and opportunities through a coordinated business network, helping each audience find a relevant point of entry and the right next connection.
 
 This statement is a strategic direction only. Final copy must reflect verified services, relationships, and operating responsibilities.
 
-### 5.2 Intended brand attributes
+### 5.2 Voice principles
 
-- **Authoritative:** Clear, composed, and credible without self-importance.
-- **Connected:** Communicates relationships and purposeful coordination.
-- **Direct:** Makes the offer, process, and next step understandable.
-- **Transparent:** Distinguishes facts, partnerships, referrals, and unknowns.
-- **Disciplined:** Uses consistent structure, hierarchy, and visual logic.
-- **Practical:** Emphasizes useful outcomes and real operational capability.
+- **Clear, not inflated:** say what HTG connects and what happens next.
+- **Confident, not boastful:** authority comes from clarity and evidence.
+- **Practical, not vague:** avoid empty claims and generic business language.
+- **Transparent:** distinguish HTG delivery, operating businesses, referrals, partners, and unknowns.
+- **Direct without overpromising:** “we handle it” may be used only for services HTG actually handles; it must not imply direct delivery of referral-only services.
 
-### 5.3 What the brand is not
+### 5.3 Messaging deliverables
 
-- Not a generic digital marketing agency identity.
-- Not a directory that lists unrelated services without explaining their connection.
-- Not a luxury aesthetic exercise.
-- Not a visual imitation of another brand or organization.
-- Not a claim that every ecosystem participant is owned or controlled by HTG.
-- Not a promise of results, commissions, introductions, or services that have not been verified.
+Prepare proposed positioning alternatives, voice guidance, homepage hero options, capability descriptions, and audience-specific CTA language. Label all copy **PROPOSED — UNAPPROVED** until explicitly approved. Never fill missing facts with invented claims.
 
-## 6. Visual direction
+## 6. Brand attributes and boundaries
 
-### 6.1 Design principle: beyond premium styling
+Intended attributes:
+- **Authoritative:** clear, composed, credible without self-importance.
+- **Connected:** communicates purposeful coordination.
+- **Direct:** makes the offer, process, and next step understandable.
+- **Transparent:** distinguishes facts, relationships, and unknowns.
+- **Disciplined:** consistent structure, hierarchy, and visual logic.
+- **Practical:** emphasizes useful outcomes and real operational capability.
 
-The desired quality is not “premium” as a collection of expensive-looking signals. It is a higher standard of clarity, control, precision, and coherence.
+The brand is not a generic digital marketing agency, an unstructured directory, a luxury-aesthetic exercise, an imitation of another organization, a claim that all ecosystem participants are owned or controlled by HTG, or a promise of results, commissions, introductions, or services that have not been verified.
 
-The identity should feel inevitable and considered: every proportion, alignment, type choice, color role, and graphic element should have a reason to exist.
+## 7. Visual direction
 
-### 6.2 Visual characteristics
+### 7.1 Design principle: beyond premium styling
 
-- Editorial and structured
-- Dark visual foundation as a proposed direction, subject to contrast and accessibility testing
-- Restrained use of color
-- Swiss-inspired typographic discipline
-- Strict grids and deliberate spacing
-- Precise geometric construction
-- Symmetry and alignment where they strengthen the mark
-- Strong hierarchy and generous negative space
-- Reproducible forms that remain clear at small sizes and in monochrome
+The desired quality is not “premium” as a collection of expensive-looking signals. It is a higher standard of clarity, control, precision, and coherence. Every proportion, alignment, type choice, color role, and graphic element must have a reason to exist.
 
-Exact color values, typefaces, grid measurements, breakpoints, and spacing tokens remain **TBD** until documented and approved in Sheet 01.
+### 7.2 Characteristics to explore
 
-### 6.3 Avoid
+- Editorial, structured, restrained, and deliberate.
+- A dark visual foundation as a proposal, subject to contrast, accessibility, and audience-comprehension testing.
+- Restrained, semantic color roles.
+- Swiss-inspired typographic discipline and strict grid logic.
+- Precise geometric construction, alignment, and intentional symmetry.
+- Strong hierarchy and purposeful negative space.
+- Reproducible forms that remain clear at small sizes and in monochrome.
 
-- Decorative gradients, metallic effects, and ornamental treatments without a functional or semantic purpose
-- Generic luxury clichés
-- Generic agency templates
-- Arbitrary geometric decoration
-- Overcomplicated monograms or marks that fail at small sizes
-- Cosmetic variations presented as genuinely different logo concepts
-- Unverified partner logos or visual endorsements
+**Symmetry rule:** use geometric symmetry where it strengthens symbol construction and balance. Do not force symmetry onto page layouts or information structures where it harms hierarchy, comprehension, or usability. Editorial layouts may be asymmetric while remaining rigorously grid-aligned.
 
-## 7. Logo exploration and A/B evaluation
+Exact colors, typefaces, grid measurements, breakpoints, spacing tokens, and logo geometry remain TBD until specified and approved in Sheet 01.
 
-The logo work must explore two meaningfully different strategic directions.
+### 7.3 References and validation
+
+Before Sheet 01a review, include at least **three relevant visual references** and **two anti-references**. For each, record:
+- source name and working URL;
+- the specific principle being studied or rejected;
+- the lesson relevant to HTG;
+- the elements that must not be copied.
+
+References are evidence for analysis, not permission to imitate. The existing HTG logo/brand guide and previously approved specifications must be linked or explicitly recorded as unavailable; do not assume an unseen source exists.
+
+Run five-second homepage-hero comprehension checks with representative reviewers for each audience before Sheet 01b approval. Record the prompt, participant role (not unnecessary personal data), observations, and resulting revisions. Do not fabricate results. Test whether the dark editorial direction communicates reassurance and clarity as well as authority, particularly for audiences considering financial, insurance, or energy services.
+
+### 7.4 Avoid
+
+- Decorative gradients, metallic effects, or ornamental treatments without functional or semantic purpose.
+- Generic luxury clichés and generic agency templates.
+- Arbitrary geometric decoration and visual noise.
+- Overcomplicated monograms or marks that fail at small sizes.
+- Cosmetic variations presented as distinct logo concepts.
+- Unverified partner logos or visual endorsements.
+
+## 8. Logo exploration and clearance
+
+Develop two meaningfully different strategic directions.
 
 ### Option A — restrained geometric authority
-
-Continue the previously explored direction: controlled geometry, strong structure, symmetry/alignment, and an authoritative silhouette.
+Continue the previously explored direction: controlled geometry, strong structure, deliberate symmetry/alignment, and an authoritative silhouette. The source asset or prior approved direction must be linked; if unavailable, record that fact and treat the exploration as a new proposal rather than claiming continuity.
 
 ### Option B — distinct strategic alternative
-
 Develop a genuinely different concept with its own rationale and visual logic. A change limited to color, stroke weight, spacing, or minor proportion is not a distinct direction.
 
-### Required comparison criteria
+### Evaluation criteria
+Compare both directions consistently:
+1. Recognition and memorability.
+2. Distinctiveness and ownability.
+3. Relevance to HTG's role as a connecting business platform.
+4. Small-size legibility.
+5. Digital and print scalability.
+6. Monochrome and reversed reproduction.
+7. Construction quality, balance, and alignment.
+8. Practicality in identity applications.
+9. Performance beside third-party venture/partner marks without implying affiliation.
 
-Evaluate both directions against the same criteria:
+Record evidence, trade-offs, reviewer feedback, and explicit approval. Do not declare a winner based on preference alone.
 
-1. Recognition and memorability
-2. Distinctiveness and ownability
-3. Relevance to HTG's role as a connecting business platform
-4. Legibility at small sizes
-5. Scalability across digital and print applications
-6. Monochrome and reversed reproduction
-7. Construction quality, balance, and alignment
-8. Practicality across identity applications
+### Name and mark screening
+Before adoption, screen “HTG”, “Hopkins Talent Group”, and each finalist logo concept. Record date, search scope, sources, findings, and reviewer. This is preliminary screening only—not a legal opinion or guarantee of availability. Obtain qualified legal advice where required. Whether a descriptor line is needed remains TBD pending review.
 
-Do not declare a winner based on personal preference alone. Record evidence, trade-offs, reviewer feedback, and explicit approval. Until then, both directions remain exploratory.
+## 9. Website and information architecture
 
-## 8. Website and information architecture implications
+### 9.1 Homepage hierarchy
 
-### 8.1 Homepage hierarchy
+The homepage should communicate:
+1. What Hopkins Talent Group is.
+2. What kinds of people and businesses it connects.
+3. The four capability areas as clear entry points.
+4. How the ecosystem and its relationships work.
+5. The appropriate next step for each audience.
 
-The homepage should communicate, in order:
+The first screen must explain the central idea without forcing visitors to decode a dense service list. The primary audience and hero emphasis remain provisional until Keith confirms the priority.
 
-1. What Hopkins Talent Group is
-2. What kinds of people and businesses it connects
-3. The four capability areas as clear entry points
-4. How the ecosystem and its relationships work
-5. The appropriate next step for each audience
+### 9.2 Audience pathways
 
-The first screen must explain the central idea without forcing visitors to decode a dense service list.
+Provide distinct routes for customers/homeowners, sales/referral partners, artists/managers, and investors. Each route must use accurate descriptions, an approved CTA, and a verified contact/lead destination. Do not invent form behavior, routing, response times, or operational ownership.
 
-### 8.2 Audience-specific pathways
+### 9.3 Proof and trust
 
-Provide distinct routes for:
-- Customers and homeowners
-- Sales and referral partners
-- Artists and managers
-- Investors
+Use only approved, attributable proof: testimonials with permission; case studies with verifiable details; credentials/licenses where applicable; partner/client marks with permission; and metrics with a defined source, period, and methodology. If proof is unavailable, omit it or use a clearly marked internal placeholder.
 
-Each route should use an accurate description, a relevant call to action, and a verified contact or lead destination. Do not invent form behavior, routing, response times, or operational ownership.
+### 9.4 Legal and disclosure layout planning
 
-### 8.3 Proof and trust
+Sheet 04 must reserve layout slots for applicable legal entity details, registrations/licensing information, service-specific disclosures, privacy/terms links, and inquiry-form notices. Applicability and exact content remain TBD until each service's delivery model and operating jurisdiction are verified with qualified counsel. Sheet 06 must include a corresponding verification checklist. Do not invent registration numbers, license details, legal copy, or compliance claims.
 
-Use only approved, attributable proof:
-- Testimonials with permission
-- Case studies with verifiable details
-- Credentials and licenses where applicable
-- Partner or client marks with permission
-- Metrics with a defined source, period, and methodology
+## 10. Research and unresolved decision register
 
-If proof is unavailable, omit it or use a clearly marked internal placeholder. Never fabricate social proof.
+All open items require an **Owner** and **Target date**. Until assigned by the appropriate decision-maker, record both as **TBD — Keith to assign**. Do not infer authority or deadlines.
 
-## 9. Research questions and validation register
+| ID | Question / evidence required | Status | Owner | Target date |
+|---|---|---|---|---|
+| R-01 | Authorized approver(s) for each business/design gate and fallback | **BLOCKER** | TBD — Keith to assign | TBD — Keith to assign |
+| R-02 | Exact legal and public-facing business description; approved positioning | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-03 | Active services, actual provider, and delivery status per service | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-04 | Geographic scope, eligibility, licensing, registration, regulatory and disclosure requirements | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-05 | Ownership/relationship classification for each named venture/platform | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-06 | Permissions for partner/client names, logos, endorsements, and work samples | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-07 | Approved testimonials, case studies, credentials, metrics, and proof | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-08 | Referral terms, commission rules, partner onboarding, and compensation disclosures | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-09 | Investor introduction process, eligibility, and permitted claims | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-10 | Contact destinations and operational owner for each audience path | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-11 | Audience priority, primary first-screen audience, and investor pathway | Proposed hypothesis | TBD — Keith to assign | TBD — Keith to assign |
+| R-12 | Logo direction and preliminary name/mark screening | Pending | TBD — Keith to assign | TBD — Keith to assign |
+| R-13 | Approved typography, color values, grid, spacing, breakpoints, and identity tokens | Pending | TBD — Keith to assign | TBD — Keith to assign |
+| R-14 | Existing logo/brand guide and previously approved specifications | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-15 | Visual references, anti-references, and comprehension-test evidence | Pending | TBD — Keith to assign | TBD — Keith to assign |
+| R-16 | Approved CTA destinations, inquiry handling, form notices, and operational process | TBD | TBD — Keith to assign | TBD — Keith to assign |
 
-The following items must be resolved before corresponding claims or design decisions become final.
+**Unanswered-item rule:** independent work may continue with visibly marked placeholders. Work that depends on an unresolved item remains blocked or provisional. Silence does not constitute approval.
 
-| ID | Question / evidence required | Status |
+## 11. Six-sheet handoff and production requirements
+
+This research informs the deliverables tracked in [Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10).
+
+| Sheet | Deliverable | Key content |
 |---|---|---|
-| R-01 | What is HTG's exact legal and public-facing business description? | TBD |
-| R-02 | Which services are currently active, and who delivers each one? | TBD |
-| R-03 | What geographic areas apply to each service? | TBD |
-| R-04 | What licensing, regulatory, and disclosure requirements apply? | TBD |
-| R-05 | What is the exact relationship between HTG and each named venture/platform? | TBD |
-| R-06 | Which partner names and logos may be displayed, and under what permission? | TBD |
-| R-07 | Which testimonials, case studies, credentials, and metrics are approved? | TBD |
-| R-08 | What are the actual referral terms, commission rules, and partner onboarding steps? | TBD |
-| R-09 | What is the investor introduction process, and what claims are permitted? | TBD |
-| R-10 | What contact destinations and operational owners apply to each audience path? | TBD |
-| R-11 | Which logo direction is approved after the A/B review? | Pending |
-| R-12 | Which typography, color values, grid, spacing, and responsive tokens are approved? | Pending |
+| 01a | Structural Design System | Identity-neutral grid, sheet composition, breakpoints, spacing scale, token naming, responsive rules, layout primitives |
+| 02 | Logo A/B Exploration | Distinct directions, construction, clearance screening, comparison evidence, third-party-mark context |
+| 01b | Identity Tokens | Color roles/values, typography, logo geometry, brand-specific tokens, usage rules after logo direction approval |
+| 03 | Identity Applications | Lockups, monochrome/reversed versions, applications, relationship-type visual grammar, misuse examples |
+| 04 | Homepage | Desktop 1440px/mobile 390px, capabilities, audience pathways, proposed messaging, proof/disclosure slots |
+| 05 | Responsive and Content States | Mobile/tablet/desktop transformations, navigation, overflow, empty/missing-content states |
+| 06 | Implementation Handoff | Components, behavior, acceptance criteria, QA evidence, unresolved register, content/relationship verification |
 
-No item should be silently resolved by a designer or developer. Record the source and approval for each resolved answer.
+### Production specification
+- Canonical review artifact: one consolidated PDF.
+- Sheet size: **A3 landscape (420 × 297 mm)**; do not switch to tabloid without explicit approval.
+- Per-sheet PNGs: export at **300 dpi at the defined A3 page dimensions**.
+- Include 100% detail crops wherever small-scale legibility or fine construction is evaluated.
+- Standard sheet composition: design frame on the left two-thirds, annotation margin on the right one-third, footer strip for variants and notes.
+- Each sheet header: title, version, date, and sheet ID.
+- Deliver native editable source files and identify the software/version.
+- Deliver machine-readable design tokens in JSON and/or CSS custom properties, including names, values, roles, and usage notes.
+- Deliver approved logo masters as vector SVG and PDF, plus raster exports where required.
+- A flattened PDF/PNG is not an editable source.
 
-## 10. Design handoff plan
+### Approval sequence
+1. Resolve approval authority before any formal gate.
+2. Complete and review Sheet 01a structural foundations.
+3. Produce and review Sheet 02 A/B directions and name/mark screening.
+4. Obtain explicit logo-direction approval.
+5. Complete Sheet 01b identity tokens; re-review affected 01a assumptions if logo geometry changes them.
+6. Complete Sheets 03–06 and final evidence/implementation handoff.
 
-This research informs the six deliverables tracked in [Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10).
+## 12. Quality and acceptance
 
-| Sheet | Deliverable | Primary output |
-|---|---|---|
-| 01 | HTG Shared Design System | Tokens, grid, typography, color roles, geometry, responsive rules |
-| 02 | HTG Logo A/B Exploration | Two distinct directions, construction logic, comparison evidence |
-| 03 | HTG Identity Applications | Lockups, monochrome/reversed versions, practical mockups, usage rules |
-| 04 | HTG Homepage | Desktop 1440px and mobile 390px compositions |
-| 05 | HTG Responsive and Content States | Mobile/tablet/desktop transformations and edge states |
-| 06 | HTG Implementation Handoff | Component inventory, behavior, acceptance criteria, QA, TBD register |
+Use the [Visual Engineering Design Standard](../visual-engineering/VISUAL_DESIGN_STANDARD.md) for construction, rendered-output inspection, revision discipline, and traceability.
 
-### Production requirements
+Score each applicable dimension 0–4 and attach evidence:
+- **0 — Missing/failed:** absent, incorrect, or unusable.
+- **1 — Weak:** major defects; requirement not met.
+- **2 — Partial:** usable only with material revisions or unresolved gaps.
+- **3 — Pass:** satisfies the documented requirement with evidence.
+- **4 — Strong:** satisfies the requirement and demonstrates repeatable quality.
 
-- Canonical deliverable: one consolidated PDF.
-- Working artifacts: individual sheet PNGs at 2× or 3×.
-- Sheet size: A3 landscape (420 × 297 mm) or tabloid (11 × 17 in), at 300 dpi equivalent.
-- Layout: approximately two-thirds design area and one-third annotation area, with a footer for variants and notes.
-- Each sheet must include title, version, date, and sheet ID.
-- Sheet 01 must be reviewed and explicitly approved before the remaining sheets proceed.
+Each sheet passes only when every critical gate is at least **3/4**, no critical defect remains, and required evidence is attached. An average score cannot compensate for a failed critical gate. Mark N/A with a reason.
 
-## 11. Quality and acceptance principles
+Mandatory pass/fail gates:
+- Brand fidelity to approved identity decisions.
+- Content and relationship accuracy, including permission evidence.
+- Responsive behavior at required viewports and states.
+- Accessibility target **WCAG 2.2 AA** for applicable interface deliverables, with recorded contrast, keyboard/focus, semantics, text resize/reflow, and relevant assistive-technology checks.
+- Implementation readiness: source, tokens, assets, responsive rules, states, and acceptance criteria sufficient to implement without guessing.
 
-Every deliverable must be assessed for:
+Record an artifact, screenshot, measurement, or test record for each gate. An exception requires documented rationale and an owner; unresolved critical accessibility defects block acceptance. Only the named authorized approver may record approval. Silence or designer completion is not approval.
 
-- Brand fidelity and strategic relevance
-- Distinctiveness and recognition
-- Composition, hierarchy, geometry, and alignment
-- Typography and legibility at actual display sizes
-- Scalability and reproduction quality
-- Responsive behavior and accessibility
-- Content accuracy and relationship integrity
-- Implementation clarity and state coverage
-
-Use explicit pass/fail gates for:
-1. Brand fidelity
-2. Content accuracy
-3. Responsive behavior
-4. Implementation readiness
-
-Each gate requires observable evidence. Reject cosmetic-only revisions: every revision must identify a specific defect and demonstrate a measurable improvement. Do not claim implementation or approval without evidence.
-
-## 12. Source and governance
+## 13. Source governance and revision history
 
 ### Primary source
+- [Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)
 
-- [GitHub Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)
-
-### Reference boundary
-
-The MMF Revision 2.1 handoff is cited solely as a reference for visual handoff discipline, structured documentation, and quality-control methodology. It is not part of HTG scope. No MMF brand, product, screens, components, or deliverables are included here.
+### Methodology reference boundary
+The MMF Revision 2.1 handoff is cited solely as a reference for visual handoff discipline, structured documentation, and quality-control methodology. It is not part of HTG scope; no brand, product, screens, components, or deliverables from that reference are included.
 
 ### Change control
-
-When this document changes:
-- Increment the revision.
+- Increment the revision when this document changes.
 - State what changed and why.
-- Preserve prior decisions and their status.
+- Preserve prior decisions and status; do not erase rejected/superseded history.
 - Distinguish approved facts from proposals and hypotheses.
-- Link new evidence or approvals.
-- Update Issue #10 if the scope, deliverables, or acceptance criteria change.
+- Link evidence and explicit approvals.
+- Update Issue #10 when scope, deliverables, sequencing, or acceptance criteria change.
+- All commits affecting this work must reference the governing issue in the commit message (for this work: `(#10)`) and be recorded in the issue thread with SHA, link, paths, and summary. Do not claim a commit is indexed until that association is visible.
 
 ### Revision history
 
 | Revision | Status | Description |
 |---|---|---|
-| 1 | Proposed | Consolidated HTG Strategy Iteration 01 into a research and design reference derived from Issue #10. |
+| 1 | Proposed | Initial consolidation of HTG Strategy Iteration 01. |
+| 2 | Proposed | Incorporated Issue #10 review remediation: approval blocker, delivery classification, relationship visual grammar, proposed messaging, provisional audience mapping, legal/disclosure slots, measurable quality/accessibility gates, source/token/vector handoff, clearance screening, references/testing, fixed A3 exports, and explicit unresolved ownership/date fields. |
 
 ---
 
-**Working rule:** If a fact, relationship, claim, visual value, or behavior is not supported by an approved source, mark it **TBD — do not invent**.
+**Working rule:** If a fact, relationship, claim, visual value, permission, or behavior is not supported by an approved source, mark it **TBD — do not invent**.
