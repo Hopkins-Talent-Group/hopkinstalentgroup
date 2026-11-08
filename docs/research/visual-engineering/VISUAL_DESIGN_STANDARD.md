@@ -262,15 +262,10 @@ Do not mark the package complete when any required source, token, vector, or evi
 
 ## 12. GitHub traceability and governance
 
-- Apply the HTG strategy and approved identity decisions; do not import unrelated visual identities or product-specific behavior.
-- Do not confuse the designer/developer's brand with HTG's client-owned brand.
-- Do not invent business facts, service availability, partner relationships, proof, legal disclosures, content, or operational flows.
-- Mark all unverified values and content **TBD — do not invent**.
-- Keep proposed directions visibly distinct from approved decisions.
-- Do not treat a placeholder as final content.
-- Use the HTG Brand Research & Strategy document for capability, audience, relationship, and messaging context; use Issue #10 for current scope, sequencing, and acceptance criteria.
-
-## 12. GitHub traceability and governance
+Audit sources:
+- [Issue #10 — governing plan](https://github.com/vitrixLab/hopkinstalentgroup/issues/10).
+- [DeepSeek/Claude findings F01–F12](https://github.com/vitrixLab/hopkinstalentgroup/issues/10#issuecomment-6724688326).
+- [Issue #10 remediation record](https://github.com/vitrixLab/hopkinstalentgroup/issues/10#issuecomment-6724748189).
 
 Every commit that changes work under this plan must reference its governing issue in the commit message. For HTG branding and website handoff work, use `(#10)`.
 
