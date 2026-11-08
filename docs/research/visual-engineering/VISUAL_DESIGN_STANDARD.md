@@ -2,7 +2,7 @@
 
 **Document ID:** VEDS-001  
 **Project:** Hopkins Talent Group (HTG) — Brand Identity & Website Design Handoff  
-**Revision:** 3  
+**Revision:** 4  
 **Status:** Working standard; quality baseline subject to HTG-specific approval  
 **Governance:** [Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)  
 **Companion research:** [HTG Brand Research & Strategy](../branding/README.md)
@@ -111,6 +111,22 @@ For the HTG six-sheet handoff:
 - A dark visual foundation is a proposed HTG direction, not a fixed requirement until approved and tested.
 - Avoid decorative color effects that do not improve recognition, hierarchy, or meaning.
 
+### 5.1 Grayscale-first structural validation
+
+Before approving color treatment, inspect a grayscale rendering at the intended output size. Verify that:
+- primary and secondary hierarchy remains clear;
+- text, icons, borders, and grouped regions remain distinguishable;
+- relationship and status information is not communicated by hue alone;
+- emphasis, grouping, and reading order remain understandable without color.
+
+Grayscale review is a structural diagnostic. It does not replace measured contrast checks, accessible labels, keyboard/focus testing, semantic structure, or WCAG 2.2 AA verification for applicable interfaces. Pair necessary color distinctions with labels, shape, pattern, position, or other redundant cues.
+
+### 5.2 Color proportion heuristics
+
+A 70% neutral / 20% supporting / 10% accent split may be tested as a composition hypothesis, but it is not a universal design law, an accessibility standard, or an approved HTG token rule. Adjust proportions according to content density, audience, medium, semantic roles, and contrast. Record why the distribution improves hierarchy and validate it in the rendered output.
+
+Do not import another studio's palette into HTG. The sample colors #101722, #F5F5F2, #AEB7C2, and #B51F32 supplied in a separate synthesis are not approved HTG identity tokens. HTG color values remain pending its own logo/identity approval sequence. Keep client and designer/studio identities separate.
+
 ## 6. Relationship and brand integrity
 
 For HTG, visual presentation must preserve the truth of business relationships. Use only verified relationship classifications:
@@ -150,7 +166,7 @@ For HTG homepage hero work, conduct five-second comprehension checks with repres
 
 Use this sequence for every substantive visual revision:
 
-1. **Inspect** — review the current source and rendered output at intended sizes.
+1. **Inspect** — review the current source and rendered output at intended sizes, including grayscale where color hierarchy is involved.
 2. **Diagnose** — identify specific defects in hierarchy, geometry, spacing, type, semantics, responsiveness, or fidelity.
 3. **Specify** — state exact changes and acceptance evidence before editing.
 4. **Construct** — implement the specified changes; avoid unrelated cosmetic churn.
@@ -294,6 +310,7 @@ Rules:
 | 1 | Working standard | Recorded project visual methods: geometry, symmetry, grid discipline, hierarchy, restraint, information engineering, rendered inspection, and issue traceability. |
 | 2 | Working standard | Aligned the standard with Issue #10 review remediation: explicit relationship visual grammar, A3/300 dpi export rules, WCAG 2.2 AA evidence gate, references and comprehension testing, evidence-based scoring, clearer rejection criteria, and stronger HTG ownership/approval boundaries. |
 | 3 | Working standard | Added explicit approval-authority/dependency controls and a complete implementation-handoff checklist for editable source, machine-readable tokens, vector logo masters, canonical PDF, A3 exports, and evidence. Linked the governing audit provenance; no approval is inferred. |
+| 4 | Working standard | Added grayscale-first structural validation, color-proportion heuristic boundaries, and an explicit prohibition on importing the designer/studio palette into HTG. Linked the portfolio/social research framework and added grayscale inspection to visual QA. |
 
 ---
 
