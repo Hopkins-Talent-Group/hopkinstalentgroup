@@ -2,7 +2,7 @@
 
 **Document ID:** VEDS-001  
 **Project:** Hopkins Talent Group (HTG) — Brand Identity & Website Design Handoff  
-**Revision:** 2  
+**Revision:** 3  
 **Status:** Working standard; quality baseline subject to HTG-specific approval  
 **Governance:** [Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)  
 **Companion research:** [HTG Brand Research & Strategy](../branding/README.md)
@@ -240,6 +240,36 @@ Instructions to an implementation agent must be concrete, testable, and scoped. 
 - Do not treat a placeholder as final content.
 - Use the HTG Brand Research & Strategy document for capability, audience, relationship, and messaging context; use Issue #10 for current scope, sequencing, and acceptance criteria.
 
+### Approval authority and dependency control
+
+- Formal approval gates cannot pass until the authorized approver(s) and any fallback are explicitly named in Issue #10 by the appropriate decision-maker.
+- Never infer approval authority from repository ownership, authorship, design completion, silence, or participation in a review.
+- Until authority is named, work independent of the unresolved decision may proceed with visible placeholders; dependent work remains blocked or provisional.
+- Each unresolved decision must retain an owner and target date. Until assigned by the appropriate decision-maker, record **TBD — Keith to assign**; do not invent names or deadlines.
+- Preserve the approval sequence: Sheet 01a structural approval; Sheet 02 A/B and name/mark screening; explicit logo-direction approval; Sheet 01b identity-token approval; then dependent application and handoff work.
+
+### Required implementation handoff
+
+For the HTG handoff, a review PDF alone is insufficient. The completed package must include:
+- One consolidated PDF as the canonical review artifact.
+- Native editable source files, with authoring software/version identified.
+- Machine-readable design tokens in JSON and/or CSS custom properties, including names, values, semantic roles, and usage notes.
+- Approved vector logo masters in SVG and PDF, with raster exports where required.
+- Per-sheet A3 landscape PNGs at 300 dpi and 100% detail crops for fine construction/legibility evidence.
+- Per-sheet acceptance evidence, including relevant rendered views, measurements, accessibility checks, responsive states, and unresolved exceptions.
+
+Do not mark the package complete when any required source, token, vector, or evidence artifact is absent. Unknown token values and unapproved logo exports remain explicitly provisional.
+
+## 12. GitHub traceability and governance
+
+- Apply the HTG strategy and approved identity decisions; do not import unrelated visual identities or product-specific behavior.
+- Do not confuse the designer/developer's brand with HTG's client-owned brand.
+- Do not invent business facts, service availability, partner relationships, proof, legal disclosures, content, or operational flows.
+- Mark all unverified values and content **TBD — do not invent**.
+- Keep proposed directions visibly distinct from approved decisions.
+- Do not treat a placeholder as final content.
+- Use the HTG Brand Research & Strategy document for capability, audience, relationship, and messaging context; use Issue #10 for current scope, sequencing, and acceptance criteria.
+
 ## 12. GitHub traceability and governance
 
 Every commit that changes work under this plan must reference its governing issue in the commit message. For HTG branding and website handoff work, use `(#10)`.
@@ -268,6 +298,7 @@ Rules:
 |---|---|---|
 | 1 | Working standard | Recorded project visual methods: geometry, symmetry, grid discipline, hierarchy, restraint, information engineering, rendered inspection, and issue traceability. |
 | 2 | Working standard | Aligned the standard with Issue #10 review remediation: explicit relationship visual grammar, A3/300 dpi export rules, WCAG 2.2 AA evidence gate, references and comprehension testing, evidence-based scoring, clearer rejection criteria, and stronger HTG ownership/approval boundaries. |
+| 3 | Working standard | Added explicit approval-authority/dependency controls and a complete implementation-handoff checklist for editable source, machine-readable tokens, vector logo masters, canonical PDF, A3 exports, and evidence. Linked the governing audit provenance; no approval is inferred. |
 
 ---
 
