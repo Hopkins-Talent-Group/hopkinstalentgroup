@@ -348,7 +348,9 @@ Record an artifact, screenshot, measurement, or test record for each gate. An ex
 ## 13. Source governance and revision history
 
 ### Primary source
-- [Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)
+- [Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10) — current scope, sequencing, unresolved decisions, and acceptance authority.
+- [DeepSeek/Claude review findings (F01–F12)](https://github.com/vitrixLab/hopkinstalentgroup/issues/10#issuecomment-6724688326) — audit source for the revision-2 remediation.
+- [Issue #10 remediation record](https://github.com/vitrixLab/hopkinstalentgroup/issues/10#issuecomment-6724748189) — records the consolidated plan update.
 
 ### Methodology reference boundary
 The MMF Revision 2.1 handoff is cited solely as a reference for visual handoff discipline, structured documentation, and quality-control methodology. It is not part of HTG scope; no brand, product, screens, components, or deliverables from that reference are included.
@@ -368,6 +370,7 @@ The MMF Revision 2.1 handoff is cited solely as a reference for visual handoff d
 |---|---|---|
 | 1 | Proposed | Initial consolidation of HTG Strategy Iteration 01. |
 | 2 | Proposed | Incorporated Issue #10 review remediation: approval blocker, delivery classification, relationship visual grammar, proposed messaging, provisional audience mapping, legal/disclosure slots, measurable quality/accessibility gates, source/token/vector handoff, clearance screening, references/testing, fixed A3 exports, and explicit unresolved ownership/date fields. |
+| 3 | Proposed | Added explicit audit provenance linking F01–F12 and the Issue #10 remediation record; reaffirmed Issue #10 as the live authority for scope, sequencing, unresolved decisions, and acceptance. No business facts or approvals were inferred. |
 
 ---
 
