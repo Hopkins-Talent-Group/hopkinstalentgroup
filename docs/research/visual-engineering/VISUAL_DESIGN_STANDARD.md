@@ -248,6 +248,8 @@ Instructions to an implementation agent must be concrete, testable, and scoped. 
 
 ## 11. HTG application boundaries
 
+This document owns visual construction and evaluation methods. HTG positioning, audience priorities, capability definitions, relationship classifications, and website architecture are owned by [HTG Brand Research](../branding/README.md) and [HTG Website Revamp Plan](../../website-revamp/README.md). Do not restate or redefine those strategic/content decisions here.
+
 - Apply the HTG strategy and approved identity decisions; do not import unrelated visual identities or product-specific behavior.
 - Do not confuse the designer/developer's brand with HTG's client-owned brand.
 - Do not invent business facts, service availability, partner relationships, proof, legal disclosures, content, or operational flows.
