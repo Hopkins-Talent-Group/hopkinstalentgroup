@@ -239,30 +239,18 @@ Record evidence, trade-offs, reviewer feedback, and explicit approval. Do not de
 ### Name and mark screening
 Before adoption, screen “HTG”, “Hopkins Talent Group”, and each finalist logo concept. Record date, search scope, sources, findings, and reviewer. This is preliminary screening only—not a legal opinion or guarantee of availability. Obtain qualified legal advice where required. Whether a descriptor line is needed remains TBD pending review.
 
-## 9. Website and information architecture
+## 9. Website strategy handoff
 
-### 9.1 Homepage hierarchy
+This document owns HTG brand strategy and the strategic requirements that govern the website. The website plan owns the detailed sitemap, page responsibilities, visitor journeys, homepage sequence, content model, implementation workstreams, and website acceptance.
 
-The homepage should communicate:
-1. What Hopkins Talent Group is.
-2. What kinds of people and businesses it connects.
-3. The four capability areas as clear entry points.
-4. How the ecosystem and its relationships work.
-5. The appropriate next step for each audience.
+See [HTG Website Revamp Plan](../../website-revamp/README.md) for website execution details. Do not maintain a second copy of its sitemap, page specifications, implementation phases, or website acceptance checklist here.
 
-The first screen must explain the central idea without forcing visitors to decode a dense service list. The primary audience and hero emphasis remain provisional until Keith confirms the priority.
-
-### 9.2 Audience pathways
-
-Provide distinct routes for customers/homeowners, sales/referral partners, artists/managers, and investors. Each route must use accurate descriptions, an approved CTA, and a verified contact/lead destination. Do not invent form behavior, routing, response times, or operational ownership.
-
-### 9.3 Proof and trust
-
-Use only approved, attributable proof: testimonials with permission; case studies with verifiable details; credentials/licenses where applicable; partner/client marks with permission; and metrics with a defined source, period, and methodology. If proof is unavailable, omit it or use a clearly marked internal placeholder.
-
-### 9.4 Legal and disclosure layout planning
-
-Sheet 04 must reserve layout slots for applicable legal entity details, registrations/licensing information, service-specific disclosures, privacy/terms links, and inquiry-form notices. Applicability and exact content remain TBD until each service's delivery model and operating jurisdiction are verified with qualified counsel. Sheet 06 must include a corresponding verification checklist. Do not invent registration numbers, license details, legal copy, or compliance claims.
+Brand-level requirements that govern the website remain authoritative in this document:
+- Use only verified capability and delivery claims.
+- Preserve the relationship classifications and permissions in §2.3.
+- Treat audience priority and positioning as proposed until approved.
+- Use only attributable, permissioned proof.
+- Reserve applicable disclosure and legal-content space; obtain qualified review before publication.
 
 ## 10. Research and unresolved decision register
 
