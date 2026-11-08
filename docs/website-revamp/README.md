@@ -1,391 +1,241 @@
 # HTG Website Revamp Plan
 
 > **Project:** Hopkins Talent Group (HTG) website revamp  
-> **Plan status:** Proposed — pending business verification and authorized approval  
-> **Strategy baseline:** HTG Strategy Iteration 01  
-> **Governing tracker:** [Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)  
-> **Scope boundary:** HTG website and HTG identity only. This document is a plan, not evidence that designs, content, approvals, or implementation are complete.
+> **Status:** Proposed execution plan — approval and verification dependencies remain open  
+> **Governing tracker:** [Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)  
+> **Strategy source:** [HTG Brand Research](../research/branding/README.md)  
+> **Visual method:** [Visual Engineering Design Standard](../research/visual-engineering/VISUAL_DESIGN_STANDARD.md)
 
----
+## 1. Purpose and authority
 
-## 1. Purpose
+This document owns the website-specific execution plan: information architecture, page responsibilities, visitor journeys, content requirements, implementation workstreams, and website acceptance.
 
-Revamp the HTG website into a clear, credible digital entry point for an interconnected business ecosystem. The site should help visitors understand what HTG connects, identify the pathway relevant to them, and take an accurate next step.
+It does not redefine HTG's business strategy, positioning, capability taxonomy, audience hierarchy, or relationship classifications. Those are maintained in [HTG Brand Research](../research/branding/README.md). If a conflict appears, pause affected work and record the decision in Issue #10; do not silently create a second definition.
 
-The website must communicate breadth without becoming a generic agency landing page, an unstructured service directory, or a collection of unsupported business claims.
+This is a plan, not evidence that designs, content, approvals, implementation, legal review, or release are complete.
 
-The central experience model is **Hub & Spoke**:
+## 2. Website objectives
 
-- **Hub:** Hopkins Talent Group as the coordinating business platform.
-- **Spokes:** clearly explained capability areas, audiences, operating businesses, partners, and opportunities.
-- **Entry:** visitors may arrive through a specific need, service, talent opportunity, or referral pathway.
-- **Connection:** the site helps visitors discover the relevant next step without implying that HTG directly delivers every listed service.
+The website should:
+1. Explain HTG's role in clear, factual language.
+2. Help visitors identify a relevant pathway.
+3. Distinguish HTG-delivered services from operating businesses, partners, clients, referrals, and unverified relationships.
+4. Route each inquiry to a confirmed destination and accountable owner.
+5. Work accessibly and reliably across supported screen sizes.
 
-## 2. Strategic baseline
+The experience model is Hub & Spoke as defined in the brand strategy. The website must not imply that HTG owns or directly delivers every service or organization displayed.
 
-The current strategy is a working hypothesis and must be confirmed before public-facing claims are finalized.
+## 3. Visitor tasks and journeys
 
-### 2.1 Brand and business context
+Design journeys only after confirming audience priorities and capability definitions in the brand strategy.
 
-- Keith Hopkins is the entrepreneur, connector, and talent manager associated with the ecosystem.
-- Hopkins Talent Group (HTG) is the central business engine and umbrella brand.
-- HTG should be presented as an interconnected B2B and B2C ecosystem—not as a conventional marketing agency or generic directory.
-- HTG's business identity, assets, content, and ownership context must remain distinct from the designer/developer's personal or studio identity.
-
-### 2.2 Capability areas
-
-| Capability area | Potential topics in the strategy | Publication condition |
+| Visitor task | Website responsibility | Required evidence before publication |
 |---|---|---|
-| Insurance, Credit & Energy | Life and health insurance, credit repair, financing, Texas residential/commercial energy | Verify active availability, provider, geography, licensing, and approved claims |
-| Marketing & Sales | Paid advertising, social media, branding, lead generation, appointment setting | Verify delivery entity, scope, proof, and lead process |
-| Websites, AI & Business | Websites, apps, Shopify, CRM, AI agents, automation, consulting | Verify active offering, delivery entity, scope, and technical claims |
-| Artists, Events & Connections | Artist promotion, EPKs, event staging/barricades, investor introductions | Verify representation, permissions, availability, and process |
+| Understand HTG | Explain the organization and coordinating role | Approved business description and positioning |
+| Explore a capability | Present relevant service information and limitations | Verified service, delivery entity, geography, availability |
+| Identify a route | Offer clear audience-appropriate navigation | Approved audience mapping and CTA |
+| Evaluate a network participant | Explain the actual relationship | Verified classification and permission |
+| Make an inquiry | Collect necessary information and route it correctly | Confirmed form purpose, recipient, notices, owner, handling |
 
-These are strategic groupings, not confirmation that every service is currently active or directly delivered by HTG.
-
-### 2.3 Provisional audience hierarchy
-
-This order is a design hypothesis, not an approved commercial priority:
-
-1. **Businesses & homeowners** — seeking operational or household solutions.
-2. **Sales & referral partners** — seeking a credible network and clearly explained collaboration opportunities.
-3. **Independent artists & managers** — seeking relevant representation, booking, promotion, or staging support.
-4. **Investors** — seeking relevant business partnerships or introductions.
-
-The primary first-screen audience and whether investors require a dedicated top-level pathway remain decisions for the authorized approver.
-
-## 3. Desired visitor experience
-
-The website should answer five questions quickly:
-
-1. **What is HTG?** A concise, factual explanation of the coordinating business platform.
-2. **What can I explore?** Four understandable capability areas.
-3. **Where do I fit?** Audience-specific routes based on visitor intent.
-4. **Who actually delivers the service?** Clear distinctions between HTG, operating businesses, partners, clients, and referral opportunities.
-5. **What happens next?** A specific, approved CTA with a real destination and accountable inquiry owner.
-
-### Experience principles
-
-- Clarity before decoration.
-- One primary message per page section.
-- Strong editorial hierarchy and deliberate negative space.
-- Consistent grid, spacing, alignment, and responsive behavior.
-- Geometric precision and deliberate symmetry where it improves the composition.
-- Plain-language service explanations and transparent relationship labels.
-- Accessible contrast, typography, focus states, and interaction patterns.
-- No decorative effects that do not improve meaning, hierarchy, legibility, or recognition.
-
-Refer to the [Visual Engineering Design Standard](../research/visual-engineering/VISUAL_DESIGN_STANDARD.md) for construction and quality-control principles.
+Do not invent response times, lead ownership, eligibility, service guarantees, commission terms, or investor access.
 
 ## 4. Proposed information architecture
 
-The following is a proposed architecture for exploration. Final navigation and page count require content, audience, and business approval.
+This sitemap is a working proposal. Validate it against approved services, audience priorities, content availability, and operational ownership.
 
-| Page / route | Purpose | Key content |
+| Page / route | Purpose | Required content |
 |---|---|---|
-| Home | Explain HTG and route visitors | Positioning, capability entry points, audience pathways, verified proof, next steps |
-| About HTG | Explain the hub and its operating model | HTG overview, Keith Hopkins context, how the network works, verified principles |
-| Capabilities | Make the four capability areas discoverable | Four capability summaries and links to verified details |
-| Capability detail pages | Explain individual service pathways | Who it serves, what is offered, who delivers it, geography, process, limitations, CTA |
-| Partners / Network | Explain verified ecosystem relationships | Relationship classification, partner or operating-business profiles, permission-aware marks |
-| Artists & Events | Provide a relevant route for talent and event inquiries | Verified offerings, eligibility/process, approved examples, inquiry path |
-| Referral Partners | Explain approved collaboration pathways | Qualification, process, terms only when supplied and approved |
-| Contact / Inquiry | Route inquiries to the correct owner | Inquiry categories, form notices, privacy links, confirmation state |
+| Home | Explain HTG and route visitors | Approved positioning, verified capability entry points, pathways, approved proof, primary CTA |
+| About HTG | Explain the organization and operating model | Approved business description, role of the hub, verified background |
+| Capabilities | Help visitors compare pathways | Approved capability summaries and links to confirmed services |
+| Capability detail | Explain a specific service | Audience, scope, provider/delivery status, geography, process, limitations, CTA |
+| Network / Partners | Explain verified ecosystem relationships | Approved descriptions, relationship labels, permissions, disclosures |
+| Artists & Events | Route relevant talent and event inquiries | Verified offerings, responsibilities, eligibility, inquiry process |
+| Referral Partners | Explain approved collaboration pathways | Qualification, process, written terms where applicable |
+| Contact / Inquiry | Route requests responsibly | Inquiry categories, required fields, privacy notices, confirmation and error states |
 
-**Do not create or publish a page simply to fill the sitemap.** If a service, relationship, proof point, or inquiry process is unverified, keep it out of public claims or present it as an explicitly approved placeholder during internal design review.
+Do not create a route merely to fill the sitemap. If a service or relationship is unverified, omit the public claim until resolved.
 
-## 5. Homepage content and layout plan
+## 5. Homepage content architecture
 
-The homepage should establish the hub concept first, then let visitors enter the relevant spoke.
+This is a structural sequence, not approved copy or final visual design.
 
-### 5.1 Proposed section sequence
+1. **Header:** approved HTG identity, concise navigation, primary CTA only when destination and owner are confirmed.
+2. **Hero:** clear statement of what HTG is and whom it connects; avoid unsupported superlatives and vague promises.
+3. **Capability entry points:** use capability definitions and service availability approved in the brand strategy.
+4. **How the network works:** explain movement from visitor need to provider, operating business, or introduction; identify responsibility accurately.
+5. **Audience routes:** present only approved pathways with useful next steps.
+6. **Verified proof:** permissioned testimonials, case studies, credentials, metrics, or third-party marks only when substantiated.
+7. **Closing CTA:** one clear action tied to a functioning route and accountable owner.
+8. **Footer:** accurate business/contact information and applicable privacy, terms, registration, licensing, and service disclosures.
 
-1. **Header and navigation**
-   - HTG identity and clear navigation.
-   - One primary CTA only after its destination and operational owner are verified.
-   - Responsive navigation with keyboard-accessible behavior.
+All headlines, descriptions, and CTA language remain proposed until approved.
 
-2. **Hero**
-   - State what HTG connects and who it helps.
-   - Use concise, plain-language positioning.
-   - Avoid unsupported superlatives, vague promises, and claims of direct service delivery.
-   - Test alternate headline and CTA combinations.
+## 6. Content model and publication controls
 
-3. **Capability entry points**
-   - Four distinct capability areas.
-   - Each card/route explains the visitor need it addresses.
-   - Avoid implying all listed services are active until verified.
+For each page section or service record, maintain:
+- Stable content identifier and page/route.
+- Approved title and description.
+- Intended audience and visitor task.
+- Capability/service reference from the brand strategy.
+- Delivery entity and relationship classification.
+- Geographic scope, eligibility, and current availability.
+- Evidence/source and last-verified date.
+- Permission status for names, logos, images, testimonials, and case-study material.
+- Required qualifier/disclosure.
+- CTA destination and operational owner.
+- Content approver and approval date.
 
-4. **How the network works**
-   - Explain the Hub & Spoke model.
-   - Show how a visitor moves from need to relevant provider, operating business, or introduction.
-   - Make responsibility and relationship status explicit.
+The relationship taxonomy and rules are owned by [HTG Brand Research §2.3](../research/branding/README.md). This plan consumes those classifications; it must not introduce a competing taxonomy.
 
-5. **Audience pathways**
-   - Businesses & homeowners.
-   - Sales & referral partners.
-   - Independent artists & managers.
-   - Investors, if an approved pathway exists.
+**Publication rule:** no unverified claim, logo, endorsement, testimonial, credential, metric, service promise, or relationship is published. Unknown items remain omitted or clearly marked as internal placeholders.
 
-6. **Verified network / proof**
-   - Include only approved ventures, operating businesses, partners, client work, testimonials, credentials, and metrics.
-   - Identify relationship type and obtain permission before displaying third-party marks or claims.
+## 7. Design handoff dependency
 
-7. **Closing CTA**
-   - Use an approved action tied to a functioning inquiry route.
-   - Do not promise commission terms, investor access, representation, or service outcomes without approved details.
+The six-sheet design handoff, approval sequence, and export/source-file requirements are governed by [Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10) and the brand strategy. This plan does not reproduce sheet specifications.
 
-8. **Footer**
-   - Accurate business/contact information.
-   - Applicable privacy, terms, disclosure, registration, and licensing details.
-   - These requirements must be confirmed with the operating model and qualified counsel.
+Website-specific design inputs:
+- Approved sitemap and page purpose.
+- Desktop, tablet, and mobile behavior.
+- Content-length and missing-content states.
+- Navigation, form, CTA, focus, and error states.
+- Legal/disclosure layout slots.
+- Verified content and permissioned assets.
 
-### 5.2 Copy direction
-
-Working positioning sentence for testing only:
-
-> Hopkins Talent Group connects people and businesses to relevant services, talent, and opportunities through one coordinated network.
-
-Voice principles:
-
-- Clear rather than inflated.
-- Confident rather than boastful.
-- Practical rather than vague.
-- Transparent about who delivers a service and what happens next.
-- Specific where facts are verified; restrained where they are not.
-
-All proposed headlines, descriptions, and CTAs remain unapproved until reviewed by the authorized approver.
-
-## 6. Relationship and content governance
-
-Every named venture, service, organization, or third-party mark must be classified before publication.
-
-Use one of these relationship types:
-
-1. **Owned business**
-2. **Operating brand**
-3. **Strategic partner**
-4. **Client relationship**
-5. **Referral opportunity**
-6. **Project under development**
-
-For every public-facing item, record:
-
-- Name and approved description.
-- Relationship classification.
-- Legal/business owner or delivery entity, where verified.
-- Current operating status and geographic scope.
-- Evidence/source and date verified.
-- Permission to use name, logo, images, testimonials, or case-study material.
-- Approved disclosure or qualifier.
-- Responsible contact/inquiry owner.
-
-**Hard rule:** visual proximity, shared navigation, or inclusion on the HTG website must never imply ownership, endorsement, partnership, or client status. When status or permission is unknown, omit the claim or use a neutral text-only placeholder in internal mockups.
-
-Do not invent credentials, testimonials, metrics, commissions, service guarantees, case studies, partner permissions, or active service availability.
-
-## 7. Design and responsive deliverables
-
-The design handoff is governed by Issue #10 and consists of six sheets:
-
-| Sheet | Deliverable | Gate / purpose |
-|---|---|---|
-| 01 — Shared Design System | 01a structural system; 01b identity tokens | Approve structure separately from identity tokens |
-| 02 — Logo A/B Exploration | Two genuinely distinct logo directions and comparison | Select only after documented evaluation and approval |
-| 03 — Identity Applications | Lockups, usage, relationship treatments, application examples | Validate real contexts and relationship clarity |
-| 04 — Homepage | Desktop 1440px and mobile 390px | Validate first-screen message and audience pathways |
-| 05 — Responsive & Content States | Mobile, tablet, desktop; missing/long/empty states | Define responsive transformations and edge cases |
-| 06 — Implementation Handoff | Components, states, tokens, assets, checklists, evidence | Provide implementation-ready specifications |
-
-Production format specified by Issue #10:
-
-- A3 landscape (420 × 297 mm) canonical sheet format.
-- Consolidated PDF for review.
-- Per-sheet PNG exports at 300 dpi.
-- Editable native source files with software/version identified.
-- Machine-readable design tokens in JSON and/or CSS custom properties.
-- Approved logo masters in SVG and PDF, with required raster exports.
-- 100% detail crops where fine construction or small-scale legibility must be inspected.
-
-Logo direction must be selected before finalizing identity-dependent tokens. If the logo changes structural assumptions, re-review only the affected structural decisions.
+Use the [Visual Engineering Design Standard](../research/visual-engineering/VISUAL_DESIGN_STANDARD.md) for geometry, grid, typography, color application, composition, and visual QA.
 
 ## 8. Implementation workstreams
 
-Design approval does not automatically authorize implementation. Once the required business and design gates are satisfied, implementation can proceed through these workstreams.
+### A — Existing-site and technical discovery
+- Inventory current routes, pages, components, assets, forms, and integrations.
+- Record existing behavior before changing it.
+- Verify framework, deployment platform, domain/DNS, hosting constraints, and environment configuration from repository and operator evidence.
+- Identify technical risks and dependencies.
 
-### Workstream A — Discovery and verification
+**Exit evidence:** route inventory, component/asset inventory, deployment facts with sources, baseline screenshots, issue list.
 
-- Inventory existing routes, pages, components, content, assets, and inquiry paths.
-- Confirm the current technology and deployment constraints from the repository and hosting environment.
-- Establish verified service, audience, relationship, and contact records.
-- Identify content gaps and approval dependencies.
-- Record current behavior before changing it.
+### B — UX and content architecture
+- Validate sitemap and navigation against approved strategy.
+- Define page templates and reusable content structures.
+- Map each route to a visitor task and approved CTA.
+- Confirm form purpose, data minimization, notices, recipient, and inquiry owner.
+- Reserve applicable legal/disclosure content slots.
 
-**Exit evidence:** route/content inventory, relationship register, technical inventory, unresolved decision register.
+**Exit evidence:** approved sitemap, page outlines, journey map, content model, CTA/recipient register.
 
-### Workstream B — UX and content architecture
+### C — Visual design
+- Apply approved identity direction and design-system tokens.
+- Produce page-level layouts and responsive states.
+- Validate real content, including long, missing, and empty states.
+- Record review feedback and measurable revisions.
 
-- Confirm primary audience and first-screen message.
-- Validate sitemap and navigation.
-- Map each audience to capability areas, entry message, and approved CTA.
-- Define page templates and content model.
-- Confirm legal/disclosure slots and inquiry ownership.
+**Exit evidence:** approved design artifacts, source files, tokens/assets, responsive comparisons, decision record.
 
-**Exit evidence:** approved sitemap, page outlines, audience-to-CTA matrix, content approval record.
+### D — Frontend implementation
+- Implement approved routes and responsive layouts.
+- Reuse components where behavior and semantics are genuinely shared.
+- Integrate only verified content and approved data sources.
+- Implement forms and CTAs only against confirmed endpoints.
+- Preserve semantic structure, keyboard operation, visible focus, and reduced-motion preferences.
+- Do not add analytics or third-party integrations without an approved purpose, privacy/consent treatment, and configuration.
 
-### Workstream C — Visual design
+**Exit evidence:** implemented routes, component/state inventory, functional tests, responsive screenshots, integration record.
 
-- Complete the six-sheet handoff in the required sequence.
-- Test logo concepts using documented criteria.
-- Establish structural system before identity tokens.
-- Validate desktop/mobile compositions and content states.
-- Run five-second comprehension reviews with representative audience reviewers; record method and observations without inventing results.
+### E — Content integration and QA
+- Load approved copy and permissioned assets.
+- Check service descriptions, relationship labels, disclosures, and destinations.
+- Test form validation, success, error, and abuse-protection behavior.
+- Test supported browsers and viewport sizes.
+- Run accessibility, performance, metadata, link, and regression checks.
 
-**Exit evidence:** reviewed design sheets, decision record, editable source, token files, vector assets.
+**Exit evidence:** content sign-off, QA report, accessibility findings, performance results, defect log, release candidate.
 
-### Workstream D — Frontend implementation
+### F — Release and post-launch
+- Confirm deployment target, domain/DNS, environment variables, backups, and rollback procedure.
+- Obtain required business, content, technical, and legal approvals.
+- Deploy only after blocking acceptance criteria pass.
+- Run production smoke tests and verify inquiry routing.
+- Monitor agreed operational indicators and record post-launch defects.
 
-- Implement approved page structure and responsive layouts.
-- Reuse components where they express consistent behavior, not merely visual similarity.
-- Bind content to verified sources or approved CMS/data structures.
-- Implement navigation, forms, and CTAs only against confirmed destinations.
-- Preserve semantic HTML, keyboard navigation, visible focus, and reduced-motion preferences where applicable.
-- Keep third-party integrations and analytics out until their purpose, consent, and configuration are approved.
+**Exit evidence:** release approval, deployment record, rollback plan, smoke-test report, post-launch review.
 
-**Exit evidence:** route-level implementation, component/state inventory, responsive screenshots, functional test results.
+## 9. Website acceptance criteria
 
-### Workstream E — Content integration and QA
+A page is not accepted because a screenshot looks complete. Each applicable criterion needs a test result and evidence.
 
-- Load approved copy and assets.
-- Verify all service descriptions, relationship labels, names, logos, and contact destinations.
-- Test empty, missing, long, and unverified content states.
-- Test forms, validation, confirmation, and error handling.
-- Review mobile, tablet, and desktop layouts.
-- Complete accessibility, performance, metadata, and cross-browser checks.
+### Content and accuracy
+- [ ] Page purpose and audience are clear.
+- [ ] All public claims trace to approved content.
+- [ ] Service availability, provider, scope, and geography are verified.
+- [ ] Relationship labels and third-party permissions are correct.
+- [ ] No unsupported testimonials, metrics, credentials, guarantees, or endorsements.
+- [ ] CTAs have confirmed destinations and operational owners.
+- [ ] Applicable legal/disclosure content has been reviewed by the responsible qualified party.
 
-**Exit evidence:** QA checklist, issue log, accessibility results, content sign-off, release candidate.
+### UX and responsive behavior
+- [ ] Navigation and core tasks work on supported desktop, tablet, and mobile sizes.
+- [ ] No critical content is clipped or horizontally overflows.
+- [ ] Long, missing, empty, and error states are handled.
+- [ ] Forms explain purpose, required fields, notices, errors, and next steps.
+- [ ] Keyboard users can reach and operate all interactive controls.
 
-### Workstream F — Release and post-launch review
+### Accessibility and technical quality
+- [ ] WCAG 2.2 AA is the target for applicable content and interactions.
+- [ ] Text and UI contrast are tested; grayscale review is supplemental only.
+- [ ] Semantic structure, accessible names, focus visibility, and keyboard behavior are verified.
+- [ ] Images have meaningful alternative text or are decorative.
+- [ ] Reduced-motion preferences are respected.
+- [ ] Performance, metadata, links, and cross-browser behavior are tested.
+- [ ] No secrets, private data, or unapproved tracking are exposed.
 
-- Confirm deployment target, domain, DNS, analytics/consent requirements, backups, and rollback procedure.
-- Obtain final business/content/legal approvals.
-- Release only after all blocking acceptance criteria pass.
-- Monitor errors, inquiry routing, and agreed performance indicators.
-- Record post-launch issues and prioritize evidence-based improvements.
+### Evidence record
+For every gate, retain the requirement, test method/environment, expected and actual result, evidence link, reviewer/date, and defect reference/resolution. Do not mark a gate passed without evidence.
 
-**Exit evidence:** release checklist, deployment record, rollback plan, smoke-test results, post-launch review.
+## 10. Website-specific dependencies
 
-## 9. Quality and acceptance gates
+Business strategy, audience priority, relationship classification, brand approval, and the master approval blocker are maintained in [HTG Brand Research](../research/branding/README.md) and [Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10). Do not maintain duplicate copies here.
 
-A deliverable is not complete because it looks finished in a mockup. Acceptance requires observable evidence.
-
-### 9.1 Brand and content accuracy
-
-- [ ] HTG is clearly distinguished from the designer/developer identity.
-- [ ] Every public service claim has a verified delivery entity and scope.
-- [ ] Every named venture/organization has a verified relationship classification.
-- [ ] Third-party marks and materials have documented permission.
-- [ ] No invented testimonials, metrics, credentials, guarantees, or endorsements.
-- [ ] Proposed copy is clearly distinguished from approved copy.
-- [ ] Contact destinations and inquiry owners are confirmed.
-
-### 9.2 UX and responsive behavior
-
-- [ ] Primary purpose is understandable in a five-second review.
-- [ ] Each intended audience has a relevant, accurate pathway.
-- [ ] Navigation and CTAs work at mobile, tablet, and desktop sizes.
-- [ ] Long, missing, empty, and unverified content states are handled.
-- [ ] No horizontal overflow or clipped critical content at supported widths.
-- [ ] Forms communicate purpose, required fields, notices, errors, and next steps.
-
-### 9.3 Accessibility and technical quality
-
-- [ ] WCAG 2.2 AA is the target acceptance standard for applicable content and interactions.
-- [ ] Text and UI contrast are tested; grayscale inspection is supplemental, not a substitute.
-- [ ] Keyboard operation, visible focus, semantic structure, and accessible names are verified.
-- [ ] Images have appropriate alternative text or are marked decorative.
-- [ ] Reduced-motion preferences and non-motion alternatives are respected.
-- [ ] Performance, metadata, links, and form behavior are tested.
-- [ ] No secrets, private data, or unapproved tracking are introduced.
-
-### 9.4 Evidence standard
-
-For each acceptance gate, retain:
-
-- Requirement being tested.
-- Test method and environment.
-- Expected result.
-- Actual result.
-- Screenshot, report, or reproducible evidence.
-- Reviewer and date.
-- Defect reference and resolution, where applicable.
-
-Do not mark a gate passed without evidence.
-
-## 10. Dependencies and unresolved decisions
-
-The following remain unresolved until supplied and approved by the appropriate decision-maker. Do not infer approval authority, ownership, or deadlines.
-
-| ID | Decision / evidence needed | Owner | Target date | Handling |
+| ID | Website-specific dependency | Owner | Target date | Until resolved |
 |---|---|---|---|---|
-| D-01 | Authorized approver for business, content, brand, and release gates | TBD — Keith to assign | TBD — Keith to assign | Block approval until named |
-| D-02 | Final legal/business description and approved positioning | TBD — Keith to assign | TBD — Keith to assign | Copy remains exploratory |
-| D-03 | Active service inventory, delivery entity, geography, and scope | TBD — Keith to assign | TBD — Keith to assign | No direct-delivery claim by default |
-| D-04 | Ownership and relationship classification for every named venture/partner | TBD — Keith to assign | TBD — Keith to assign | No implied ownership or affiliation |
-| D-05 | Permission for third-party names, logos, testimonials, and client work | TBD — Keith to assign | TBD — Keith to assign | Omit or use internal neutral placeholder |
-| D-06 | Audience ranking and primary homepage audience | TBD — Keith to assign | TBD — Keith to assign | Current order remains a hypothesis |
-| D-07 | Investor pathway and approved introduction process | TBD — Keith to assign | TBD — Keith to assign | No promise of access or outcomes |
-| D-08 | Referral/commission terms and partner onboarding process | TBD — Keith to assign | TBD — Keith to assign | No terms or earnings claims |
-| D-09 | Legal disclosures, registrations, licensing, privacy, terms, and form notices | TBD — Keith to assign | TBD — Keith to assign | Determine with verified model and qualified counsel |
-| D-10 | Approved proof points, credentials, testimonials, and case studies | TBD — Keith to assign | TBD — Keith to assign | Do not fabricate or substitute |
-| D-11 | Contact destinations and operational owner for each inquiry route | TBD — Keith to assign | TBD — Keith to assign | Keep CTA provisional |
-| D-12 | Final logo direction, name/mark screening, and identity token approval | TBD — Keith to assign | TBD — Keith to assign | Follow Issue #10 sequence |
-| D-13 | Existing brand guide, approved logo files, and prior design specifications | TBD — Keith to assign | TBD — Keith to assign | Request source files or record absence |
-| D-14 | Hosting, domain, deployment, integrations, analytics, and operational constraints | TBD — Keith to assign | TBD — Keith to assign | Verify before implementation/release |
+| W-01 | Current website route/content/asset inventory | TBD | TBD | Discovery incomplete |
+| W-02 | Verified framework, hosting, deployment, domain, and DNS facts | TBD | TBD | No platform-specific assumptions |
+| W-03 | Form purpose, required fields, recipient, privacy notice, and inquiry owner per route | TBD | TBD | Do not activate unowned CTA/form |
+| W-04 | Approved content model/CMS or source-of-truth decision | TBD | TBD | Use controlled placeholders |
+| W-05 | Analytics, cookies, integrations, and consent requirements | TBD | TBD | Do not add tracking/integrations |
+| W-06 | Backup, rollback, monitoring, and release operator | TBD | TBD | Release blocked |
 
-**Unanswered-item rule:** independent work may continue with clearly labeled placeholders. Work dependent on an unresolved decision must remain blocked or visibly provisional. Silence is not approval.
+Owners and dates remain TBD until assigned by the authorized project decision-maker. Silence is not approval.
 
 ## 11. Risks and controls
 
 | Risk | Control |
 |---|---|
-| Visitors cannot understand what HTG actually does | Lead with a concise hub explanation and test comprehension |
-| Website implies HTG owns or operates every listed venture | Require relationship classification and explicit labels |
-| Service pages advertise inactive or unauthorized services | Verify availability, delivery entity, geography, and approvals |
-| Too many audiences dilute the homepage | Confirm primary audience and use clear secondary pathways |
-| Unsupported proof damages trust | Publish only sourced, permissioned, approved evidence |
-| Visual polish hides weak information architecture | Review content hierarchy and task paths before decoration |
-| Unclear CTAs create unowned inquiries | Confirm destination, receiving owner, and response process |
-| Legal or regulatory disclosures are omitted | Reserve layout slots and obtain qualified review |
-| Cosmetic iteration repeats without measurable progress | Require change specifications, rendered comparisons, and acceptance evidence |
+| Website repeats or contradicts strategy | Keep strategic definitions in the brand research source; link rather than duplicate |
+| Website implies unverified ownership or service delivery | Use approved relationship and delivery classifications |
+| Visitors cannot identify a useful next step | Map each page to a visitor task and verified CTA |
+| Inquiry has no accountable recipient | Confirm recipient and operational owner before activation |
+| Visual polish hides navigation/content problems | Test page tasks and comprehension before decorative refinement |
+| Legal or privacy obligations are missed | Reserve content slots and obtain qualified review |
+| Repeated cosmetic revisions produce no progress | Require a defect statement, measurable change, rendered comparison, and evidence |
 
-## 12. Change control and project traceability
+## 12. Change control
 
-- Issue #10 is the governing plan and decision thread for the current brand/website handoff.
-- Every project commit related to this plan must reference the governing issue, following the repository's documented commit convention: `<type>(<scope>): <specific change> (#10)`.
-- Record meaningful design/business decisions and evidence in Issue #10.
-- Link implementation PRs to the issue and include affected routes, test evidence, and unresolved risks.
-- Update this README when scope, sequence, architecture, or acceptance criteria materially change.
-- Do not rewrite historical decisions silently; record the change, reason, approver, and affected artifacts.
+- Issue #10 is the governing decision and approval thread.
+- Related commit messages must reference (#10) using the repository convention.
+- Record material scope, architecture, content, and release decisions in Issue #10.
+- Update this README only for website-specific changes; update brand research only for strategic changes.
+- Link PRs and commits to affected routes, tests, evidence, and unresolved risks.
+- Never silently change approved facts or decisions.
 
-## 13. Related project documents
+## 13. Related documents
 
+- [Documentation index](../README.md)
 - [Governing Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)
 - [HTG Brand Research](../research/branding/README.md)
 - [Visual Engineering Design Standard](../research/visual-engineering/VISUAL_DESIGN_STANDARD.md)
 - [Brand Portfolio & Social Research Framework](../research/brand-portfolio-social-research/PORTFOLIO_AND_SOCIAL_RESEARCH_FRAMEWORK.md)
+- [Inquiry Email — Website to VPS](../inquiry-email.md)
 
-## 14. Current status
+## 14. Status
 
-**Status: Planning baseline documented; approval and verification dependencies remain open.**
-
-This README establishes the website revamp work plan. It does not certify that:
-
-- HTG business facts or service availability have been verified;
-- the audience hierarchy or sitemap has been approved;
-- a logo or identity direction has been selected;
-- design sheets have passed review;
-- website implementation is complete;
-- legal review, accessibility testing, or release approval has occurred.
-
-Update this section only when the relevant evidence exists and can be linked.
+**Planning baseline only.** This file does not certify business verification, approved copy, final sitemap, completed design, implementation, legal review, accessibility conformance, or release approval. Update status only when linked evidence supports the change.
