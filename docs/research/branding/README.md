@@ -3,7 +3,7 @@
 > **Project:** Hopkins Talent Group (HTG)  
 > **Research record:** HTG-STR-001  
 > **Iteration:** Strategy Iteration 01  
-> **Revision:** 3  
+> **Revision:** 4  
 > **Status:** Proposed strategic baseline — pending business verification and stakeholder approval  
 > **Governance:** [GitHub Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)  
 > **Companion standard:** [Visual Engineering Design Standard](../visual-engineering/VISUAL_DESIGN_STANDARD.md)
@@ -286,8 +286,36 @@ All open items require an **Owner** and **Target date**. Until assigned by the a
 | R-14 | Existing logo/brand guide and previously approved specifications | TBD | TBD — Keith to assign | TBD — Keith to assign |
 | R-15 | Visual references, anti-references, and comprehension-test evidence | Pending | TBD — Keith to assign | TBD — Keith to assign |
 | R-16 | Approved CTA destinations, inquiry handling, form notices, and operational process | TBD | TBD — Keith to assign | TBD — Keith to assign |
+| R-17 | Original notebooks, datasets, data dictionary, provenance, and reproducible outputs for any claimed HTG audience/social research | **NOT PROVIDED / UNVERIFIED** | TBD — Keith to assign | TBD — Keith to assign |
+| R-18 | Social-comment sampling frame, codebook, coder training, inter-coder reliability, privacy review, and analysis plan | Proposed methodology only | TBD — Keith to assign | TBD — Keith to assign |
+| R-19 | Evidence-backed portfolio/resource-allocation inputs: costs, capacity, constraints, relationship permissions, and outcome measures | Not available | TBD — Keith to assign | TBD — Keith to assign |
 
 **Unanswered-item rule:** independent work may continue with visibly marked placeholders. Work that depends on an unresolved item remains blocked or provisional. Silence does not constitute approval.
+
+## 10A. Portfolio strategy and social communication evidence
+
+Use the companion [Brand Portfolio, Co-Branding & Social Communication Research Framework](../brand-portfolio-social-research/PORTFOLIO_AND_SOCIAL_RESEARCH_FRAMEWORK.md) when evaluating ecosystem-level priorities, co-branding/resource allocation, social comments, and empirical claims.
+
+### Portfolio-level governance
+
+- Evaluate collective ecosystem value rather than maximizing one capability, campaign, or visible partner in isolation.
+- Do not treat every ecosystem participant as an HTG sub-brand. The verified relationship class and permission record take precedence over portfolio diagrams or visual groupings.
+- Assess strategic fit, audience need, delivery readiness, cost, risk, operational capacity, and evidence quality before recommending resource allocation.
+- Do not claim an optimized budget, partner ranking, or portfolio return without verified input data and an appropriate model.
+- Keep exploration/exploitation trade-offs as a future decision informed by risk tolerance, available budget, baseline performance, and the decision horizon.
+
+### Social communication research
+
+- Treat opinion seeking, opinion giving, and opinion passing as distinct eWOM constructs; do not attribute this taxonomy to Godey et al.
+- Use a documented, multi-label comment codebook for intent, sentiment, topic, explicit audience signal, journey stage, actionability, and coding confidence.
+- Distinguish qualitative interpretation from quantitative summaries. Record sample frame, platform, period, language, denominator, exclusions, and limitations.
+- Use Cronbach's alpha only for appropriate multi-item scale consistency; use an appropriate inter-coder agreement statistic for coder reliability. KMO/Bartlett are factor-analysis diagnostics, not validation of arbitrary comment labels.
+- Regression and structural models require appropriate data and assumptions; observational associations do not establish causation.
+- Do not assert HTG audience findings until original notebooks, datasets, data provenance, analysis outputs, and validation evidence have been inspected.
+
+### Evidence status
+
+The portfolio/social research synthesis supplied for this iteration is a proposed methodology and literature-informed framework, not verified HTG empirical findings. No notebook-derived coefficients, sample statistics, sentiment proportions, reliability values, or allocation outcomes are approved for publication.
 
 ## 11. Six-sheet handoff and production requirements
 
@@ -371,6 +399,7 @@ The MMF Revision 2.1 handoff is cited solely as a reference for visual handoff d
 | 1 | Proposed | Initial consolidation of HTG Strategy Iteration 01. |
 | 2 | Proposed | Incorporated Issue #10 review remediation: approval blocker, delivery classification, relationship visual grammar, proposed messaging, provisional audience mapping, legal/disclosure slots, measurable quality/accessibility gates, source/token/vector handoff, clearance screening, references/testing, fixed A3 exports, and explicit unresolved ownership/date fields. |
 | 3 | Proposed | Added explicit audit provenance linking F01–F12 and the Issue #10 remediation record; reaffirmed Issue #10 as the live authority for scope, sequencing, unresolved decisions, and acceptance. No business facts or approvals were inferred. |
+| 4 | Proposed | Added portfolio-level governance and social communication research boundaries; linked the new research framework; added unresolved evidence requirements for notebooks, comment methodology, and resource-allocation inputs. No empirical HTG findings or external palette were adopted. |
 
 ---
 
