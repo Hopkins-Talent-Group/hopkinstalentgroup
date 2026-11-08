@@ -2,10 +2,14 @@
 
 **Document ID:** VEDS-001  
 **Project:** Hopkins Talent Group (HTG) — Brand Identity & Website Design Handoff  
-**Status:** Working standard; apply as a quality baseline, subject to HTG-specific approval  
-**Related tracker:** [Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)
+**Revision:** 2  
+**Status:** Working standard; quality baseline subject to HTG-specific approval  
+**Governance:** [Issue #10 — HTG Brand Identity & Website Design Handoff](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)  
+**Companion research:** [HTG Brand Research & Strategy](../branding/README.md)
 
-> This standard records the visual methods established in the project. It is a design and quality-control method, not a claim that any particular asset has been approved. HTG ownership and identity remain distinct from the designer's personal or studio identity.
+> This standard records the visual methods established in the project. It is a construction and quality-control method, not a claim that any particular asset has been approved. HTG ownership and identity remain distinct from the designer's personal or studio identity.
+
+---
 
 ## 1. Design thesis
 
@@ -23,6 +27,7 @@ The standard favors deliberate construction over decoration and demonstrable imp
 - Align elements to shared axes and a documented grid.
 - Use symmetry when it strengthens the concept; do not force symmetry where the information or form requires asymmetry.
 - Avoid uncontrolled hand-drawn strokes when the brief calls for precise geometry.
+- Check optical balance after mathematical construction; optical correction must be intentional and documented, not arbitrary.
 
 ### 2.2 Grid-first composition
 - Establish page or viewport structure before placing content.
@@ -30,6 +35,7 @@ The standard favors deliberate construction over decoration and demonstrable imp
 - Keep repeated components aligned to the same structural rules.
 - Allow intentional exceptions only when they improve hierarchy or meaning.
 - Do not use arbitrary offsets to imitate visual complexity.
+- Treat a grid as a constraint system, not a visible decoration.
 
 ### 2.3 Typographic hierarchy
 - Establish a clear order for titles, section headings, labels, body copy, metadata, and annotations.
@@ -37,6 +43,7 @@ The standard favors deliberate construction over decoration and demonstrable imp
 - Preserve legibility at the actual output size, not only when zoomed in.
 - Treat typography as structural information, not decoration.
 - Avoid excessive typeface mixing, arbitrary letter spacing, and hierarchy created only through effects.
+- Document font family, weights, licensing/source, fallback stack, roles, and responsive behavior before implementation.
 
 ### 2.4 Negative space and restraint
 - Treat whitespace as an active compositional element.
@@ -46,151 +53,222 @@ The standard favors deliberate construction over decoration and demonstrable imp
 
 ### 2.5 Consistency and systems
 - Define reusable tokens and rules for color roles, typography, spacing, radii, strokes, grids, and component states.
-- Reuse rules rather than copying isolated visual treatments.
-- Document exceptions and their rationale.
-- Keep a shared visual language coherent without forcing every brand or artifact to look identical.
+- Reuse rules rather than copy/paste visual approximations.
+- Define component variants and states explicitly.
+- A repeated pattern must preserve the same alignment, spacing, type hierarchy, and interaction logic unless a documented exception is required.
 
-## 3. Construction methods
+### 2.6 Information engineering
+- Treat diagrams and information graphics as structured information systems.
+- Make nodes, relationships, direction, hierarchy, labels, and boundaries understandable without relying on decoration.
+- Distinguish actual data, derived values, estimates, placeholders, and unknowns.
+- Never fabricate data, labels, relationships, metrics, or system behavior to make a composition appear complete.
 
-### 3.1 Symbol and logo construction
-1. Define the concept and recognition requirement before drawing.
-2. Explore distinct silhouettes rather than producing superficial variants.
-3. Construct the mark using controlled geometry and intentional negative space.
-4. Check optical balance after mathematical alignment; optical corrections must be deliberate and documented.
-5. Test monochrome, reversed, small-size, and single-color reproduction.
-6. Document clear space, minimum size, lockups, and misuse cases.
-7. Do not declare a direction final without an explicit review and approval record.
+## 3. Logo and symbol construction
 
-### 3.2 Information graphics and diagrams
-1. Identify the information, entities, and relationships that must be communicated.
-2. Choose a visual structure that matches those relationships (sequence, hierarchy, network, comparison, topology, or state).
-3. Establish a reading path and consistent visual encoding.
-4. Keep labels close to the objects or relationships they describe.
-5. Distinguish factual data, interpretation, and unknown values.
-6. Never invent data, metrics, nodes, relationships, status, or behavior to make a diagram appear complete.
+- Begin with the concept and intended recognition behavior, not a decorative shape.
+- Define a construction grid, axes, proportions, negative-space relationships, and stroke logic.
+- Test silhouette recognition before adding detail.
+- Test monochrome, reversed, small-size, and reproduction contexts.
+- Use symmetry where it supports the concept; verify optical balance independently.
+- Maintain clear space, minimum size, alignment, and lockup rules.
+- For A/B exploration, concepts must differ in strategy and visual logic—not merely color, stroke weight, spacing, or minor proportion.
+- Do not use unlicensed or unverified third-party marks as if endorsed or owned.
+- Final identity adoption requires explicit approval and documented name/mark screening; screening is not a legal guarantee.
 
-### 3.3 Cards, dashboards, and interface graphics
-1. Define the card's purpose and primary user question.
-2. Establish a predictable hierarchy: identity/context, primary information, supporting detail, and actions.
-3. Use consistent internal padding, alignment, and component spacing.
-4. Make state differences explicit (loading, empty, error, unavailable, selected, active, disabled).
-5. Use real content or clearly marked representative placeholders.
-6. Verify the rendered result at target dimensions and responsive breakpoints.
+## 4. Layout, cards, dashboards, and editorial sheets
 
-### 3.4 Editorial and handout layouts
-- Use a disciplined page grid and a clear reading sequence.
-- Separate the primary visual, supporting explanation, annotations, and metadata.
-- Keep sheet titles, IDs, revision information, and footers consistent.
-- Use image and mockup placement to explain the design, not merely to fill space.
-- Maintain sufficient contrast and legibility in both screen and print contexts.
+### 4.1 Composition
+- Establish the information hierarchy before choosing visual effects.
+- Use consistent margins, gutters, alignment anchors, and spacing units.
+- Keep title, body, metadata, labels, and annotation roles distinct.
+- Ensure the primary content is understandable at the intended viewing distance and scale.
+- Use whitespace to separate concepts and group related information.
 
-## 4. Visual hierarchy and color
+### 4.2 Cards and interface components
+- Define purpose, content schema, hierarchy, and state coverage before styling.
+- Specify default, hover, focus, active, disabled, loading, empty, error, and responsive states where applicable.
+- Do not add controls that do not perform their advertised action.
+- Avoid repeating the same information in multiple visual treatments.
+- Do not invent ratings, statuses, values, chart data, or product facts.
 
-- Assign colors semantic roles; do not choose colors only because they look fashionable.
-- Maintain contrast appropriate to the content and output context.
-- Reserve accent colors for meaningful emphasis or state.
-- Do not encode meaning through color alone; pair it with labels, shape, position, or other cues.
-- Use dark visual themes only when they improve the intended identity and readability; dark backgrounds are not a substitute for a coherent system.
-- Do not add effects to compensate for weak composition or unclear hierarchy.
+### 4.3 Editorial handout layout
+For the HTG six-sheet handoff:
+- Page format is **A3 landscape (420 × 297 mm)**.
+- Use a main design frame on the left two-thirds, annotation margin on the right one-third, and footer strip for variants/notes.
+- Every sheet includes title, version, date, and sheet ID.
+- Canonical review artifact is one consolidated PDF.
+- Export individual sheet PNGs at **300 dpi at the defined A3 dimensions**.
+- Include 100% detail crops for fine construction and small-size legibility.
+- Do not switch to tabloid without explicit approval.
+- Distinguish exploratory mockups from approved assets.
 
-## 5. Quality-control protocol
+## 5. Color and visual semantics
 
-Every meaningful revision must follow this sequence:
+- Assign color by semantic role: background, surface, primary text, secondary text, border, accent, status, and focus.
+- Document color values and intended use in machine-readable tokens.
+- Test contrast against the actual background and component states.
+- Never use color alone to communicate status or relationship.
+- A dark visual foundation is a proposed HTG direction, not a fixed requirement until approved and tested.
+- Avoid decorative color effects that do not improve recognition, hierarchy, or meaning.
 
-1. **Inspect:** review the current source and rendered output.
-2. **Diagnose:** identify specific defects, omissions, or unmet requirements.
-3. **Specify:** state the exact intended changes and what must remain unchanged.
-4. **Construct:** make the smallest complete set of changes that resolves the defects.
-5. **Render:** inspect the actual output at its target dimensions and relevant responsive states.
-6. **Compare:** evaluate old versus new against the same criteria.
-7. **Record:** document changed files, evidence, unresolved items, and acceptance status.
+## 6. Relationship and brand integrity
 
-### 5.1 Mandatory rejection conditions
-Reject a revision when it:
-- Repeats the previous composition with only superficial color, spacing, or decoration changes.
-- Claims improvement without showing what changed and why.
-- Introduces invented data, fake UI, fabricated relationships, or unsupported content.
-- Breaks alignment, proportions, hierarchy, legibility, or responsive behavior.
-- Uses decorative effects to conceal structural problems.
-- Cannot be verified in the rendered artifact.
+For HTG, visual presentation must preserve the truth of business relationships. Use only verified relationship classifications:
+- HTG-owned business
+- HTG operating brand
+- Strategic partner
+- Client relationship
+- Referral opportunity
+- Project under development
+- Other — explain and verify
 
-### 5.2 Acceptance checklist
-- [ ] The visual purpose and reading path are immediately understandable.
-- [ ] Geometry, spacing, alignment, and proportions are deliberate and consistent.
-- [ ] Typography has a clear hierarchy and remains legible at target size.
-- [ ] Color and effects serve meaning rather than decoration.
-- [ ] No unsupported facts, data, relationships, or behavior were introduced.
-- [ ] Relevant sizes, states, and responsive layouts were inspected.
-- [ ] The revision demonstrates a specific improvement over the prior version.
-- [ ] Source changes and rendered evidence are available for review.
-- [ ] Approval status is explicit; unapproved work is not represented as final.
+Define a consistent visual treatment and qualifier/disclosure slot for each class. If relationship status or mark permission is unknown, use a neutral text-only label or placeholder. Do not imply ownership, endorsement, or affiliation through shared lockups, containers, proximity, or hierarchy. Treat HTG identity as distinct from the designer/developer's personal or studio identity.
 
-## 6. Change specification template
+## 7. Accessibility and responsive behavior
 
-Use this structure when delegating a visual revision:
+For applicable HTG website/interface deliverables, target **WCAG 2.2 AA**.
 
-- **Target:** exact file, component, sheet, or asset.
-- **Observed defect:** what is wrong in the current rendered result.
-- **Required change:** concrete visual or behavioral modification.
-- **Preserve:** elements and behavior that must not change.
-- **Constraints:** dimensions, grid, tokens, content, states, and technical limitations.
-- **Evidence required:** rendered screenshots or artifacts at named dimensions/states.
-- **Acceptance test:** observable pass/fail conditions.
-- **Issue reference:** the GitHub issue tracking the work.
+Evidence must include, as applicable:
+- Text and non-text contrast measurements.
+- Keyboard operation and logical focus order.
+- Visible focus indication.
+- Semantic structure and meaningful labels.
+- Text resizing and reflow.
+- Accessible names and states for controls.
+- Relevant assistive-technology checks.
+- Responsive checks at required viewports, including content expansion, long headings, missing content, and overflow.
 
-Do not issue vague instructions such as “make it better,” “make it premium,” or “revamp it” without defining the defect and acceptance criteria.
+Accessibility is a critical pass/fail gate, not a final cosmetic check. Document exceptions with rationale and an owner. Unresolved critical failures block acceptance.
 
-## 7. HTG-specific application boundary
+## 8. Visual references and validation
 
-This standard supplies shared construction and quality methods. It does not override the HTG brand strategy or authorize new brand decisions.
+Every major design direction must include at least three relevant visual references and two anti-references. Record the source/link, lesson being studied or rejected, HTG relevance, and what must not be copied. References are for analysis, not imitation.
 
-For HTG:
-- Preserve the proposed editorial, structured, restrained direction and precise geometric discipline.
-- Keep logo A/B exploration meaningfully distinct until an approved direction exists.
-- Keep HTG's identity and business ownership separate from the designer's identity.
-- Do not imply ownership, partnership, endorsement, client status, or service availability without verified evidence.
-- Keep unknown facts and unapproved content visibly marked as TBD.
-- Apply the six-sheet sequence and approval gates defined in [Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10).
+For HTG homepage hero work, conduct five-second comprehension checks with representative reviewers for each audience before identity-token approval. Record prompt, participant role, observations, and revisions. Do not fabricate participants, findings, or test outcomes.
 
-## 8. GitHub issue and commit traceability policy
+## 9. Quality-control protocol
 
-**Every commit that changes project work must reference its governing GitHub issue in the commit message.** For the current HTG brand and website plan, use **#10**.
+Use this sequence for every substantive visual revision:
 
-Recommended commit format:
+1. **Inspect** — review the current source and rendered output at intended sizes.
+2. **Diagnose** — identify specific defects in hierarchy, geometry, spacing, type, semantics, responsiveness, or fidelity.
+3. **Specify** — state exact changes and acceptance evidence before editing.
+4. **Construct** — implement the specified changes; avoid unrelated cosmetic churn.
+5. **Render** — produce the actual output at required viewports/scales.
+6. **Compare** — compare before/after against the same criteria and evidence.
+7. **Record** — document changed files, revision rationale, results, unresolved defects, and issue linkage.
 
-```text
-<type>(<scope>): <specific change> (#10)
+A source-code diff alone is not proof of visual improvement. Inspect the rendered result.
+
+### 9.1 Evidence-based scoring
+
+Score each applicable quality dimension from 0–4:
+- **0 — Missing/failed:** absent, incorrect, or unusable.
+- **1 — Weak:** major defects; requirement not met.
+- **2 — Partial:** material revisions or unresolved gaps remain.
+- **3 — Pass:** documented requirement is satisfied with evidence.
+- **4 — Strong:** requirement is satisfied with repeatable quality.
+
+Each sheet passes only when every critical gate is at least 3/4, no critical defect remains, and evidence is attached. Average scores cannot compensate for a failed critical gate. Record N/A with a reason.
+
+### 9.2 Critical gates
+
+- Brand fidelity to approved identity decisions.
+- Content and relationship accuracy, including permission evidence.
+- Responsive behavior and state coverage.
+- Accessibility (WCAG 2.2 AA target for applicable interfaces).
+- Implementation readiness: source, tokens, assets, behavior, states, and acceptance criteria sufficient to implement without guessing.
+
+### 9.3 Mandatory rejection conditions
+
+Reject a revision when:
+- It is cosmetic-only and does not resolve a stated defect.
+- It introduces fabricated data, content, relationships, metrics, or behavior.
+- It uses unverified marks or implies an unauthorized relationship.
+- It reduces legibility, accessibility, responsiveness, or information clarity.
+- It repeats a prior approach without materially changing the identified failure.
+- No rendered proof is supplied for a visual change.
+- A critical gate fails or required approval/evidence is missing.
+
+## 10. Change specification template
+
+Use this structure when directing an implementation agent or designer:
+
+```md
+## Change request
+- Issue: #10
+- Artifact / screen:
+- Current revision:
+- Target revision:
+
+## Observed defect
+- Exact location:
+- What is wrong:
+- Why it matters:
+- Evidence (screenshot / viewport / measurement):
+
+## Required change
+- Geometry / alignment:
+- Grid / spacing:
+- Typography:
+- Color / semantics:
+- Content / relationship accuracy:
+- Responsive / interaction states:
+
+## Constraints
+- Must preserve:
+- Must not introduce:
+- Unknowns that remain TBD:
+
+## Acceptance evidence
+- Required render(s):
+- Viewports / export sizes:
+- Measurements / tests:
+- Before-after comparison:
+- Remaining defects:
 ```
+
+Instructions to an implementation agent must be concrete, testable, and scoped. Do not ask for a vague “revamp” without identifying the artifact, defects, constraints, and evidence required. Do not claim work is complete until the rendered output has been inspected.
+
+## 11. HTG application boundaries
+
+- Apply the HTG strategy and approved identity decisions; do not import unrelated visual identities or product-specific behavior.
+- Do not confuse the designer/developer's brand with HTG's client-owned brand.
+- Do not invent business facts, service availability, partner relationships, proof, legal disclosures, content, or operational flows.
+- Mark all unverified values and content **TBD — do not invent**.
+- Keep proposed directions visibly distinct from approved decisions.
+- Do not treat a placeholder as final content.
+- Use the HTG Brand Research & Strategy document for capability, audience, relationship, and messaging context; use Issue #10 for current scope, sequencing, and acceptance criteria.
+
+## 12. GitHub traceability and governance
+
+Every commit that changes work under this plan must reference its governing issue in the commit message. For HTG branding and website handoff work, use `(#10)`.
+
+Recommended format:
+
+`<type>(<scope>): <specific change> (#10)`
 
 Examples:
-
-```text
-docs(branding): add visual engineering standard (#10)
-design(htg): define shared grid and typography tokens (#10)
-fix(homepage): correct mobile hero alignment (#10)
-```
+- `docs(branding): revise strategy research from review findings (#10)`
+- `docs(visual-engineering): strengthen visual QA and accessibility standard (#10)`
+- `feat(homepage): implement approved audience pathway (#10)`
 
 Rules:
-- Include the issue reference in every project commit, not only the final commit in a sequence.
-- Use the most relevant existing issue when work belongs to another tracked task; do not attach unrelated work to #10.
-- If no suitable issue exists, create or identify the correct issue before committing.
-- Keep commit messages specific enough to identify the change.
-- In the issue thread, record the commit SHA, commit link, changed paths, and a concise summary when the commit is pushed.
-- Reference the issue in pull-request descriptions as well.
-- Do not claim that a commit is indexed until GitHub shows the issue/commit association or the issue thread has a direct commit record.
+- Unrelated work must reference its own governing issue, not automatically #10.
+- If no suitable issue exists, identify/create the issue before committing.
+- Pull requests must reference the governing issue.
+- After pushing, record the commit SHA, direct commit URL, changed paths, and concise summary in the issue thread.
+- Do not claim a commit is indexed/associated until the GitHub issue thread or GitHub's linked issue view demonstrates that association.
+- This is a documented workflow requirement; automated enforcement is not claimed unless separately configured and verified.
+- Do not rewrite existing history solely to retrofit issue references.
 
-This is a workflow policy for future work. It does not retroactively rewrite existing commit history.
+## 13. Revision history
 
-## 9. Governance
-
-- This document is a living standard; changes should be reviewed and committed with an issue reference.
-- Project-specific approved specifications take precedence over generic guidance where they conflict.
-- Record decisions and exceptions in the relevant issue.
-- Keep historical revisions available; do not silently erase rejected directions or unresolved decisions.
-- A written standard does not itself constitute approval of any visual asset.
-
-## Revision history
-
-| Revision | Status | Change |
+| Revision | Status | Description |
 |---|---|---|
-| 1.0 | Working baseline | Consolidated project visual methods, construction practices, QA protocol, and issue/commit traceability policy. |
+| 1 | Working standard | Recorded project visual methods: geometry, symmetry, grid discipline, hierarchy, restraint, information engineering, rendered inspection, and issue traceability. |
+| 2 | Working standard | Aligned the standard with Issue #10 review remediation: explicit relationship visual grammar, A3/300 dpi export rules, WCAG 2.2 AA evidence gate, references and comprehension testing, evidence-based scoring, clearer rejection criteria, and stronger HTG ownership/approval boundaries. |
+
+---
+
+**Core rule:** no visual change is accepted because it merely looks different. It must solve a defined problem, preserve factual integrity, and demonstrate improvement in the rendered result.
