@@ -3,7 +3,7 @@
 > **Project:** Hopkins Talent Group (HTG)  
 > **Research record:** HTG-STR-001  
 > **Iteration:** Strategy Iteration 01  
-> **Revision:** 2  
+> **Revision:** 3  
 > **Status:** Proposed strategic baseline — pending business verification and stakeholder approval  
 > **Governance:** [GitHub Issue #10](https://github.com/vitrixLab/hopkinstalentgroup/issues/10)  
 > **Companion standard:** [Visual Engineering Design Standard](../visual-engineering/VISUAL_DESIGN_STANDARD.md)
