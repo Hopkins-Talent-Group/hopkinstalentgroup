@@ -14,6 +14,8 @@
 
 ## 1. Purpose and boundary
 
+**Document ownership:** this file owns research methods and evidence frameworks for portfolio/co-branding and social communication. HTG business facts, capability taxonomy, audience hypotheses, and relationship classifications are maintained in [HTG Brand Research](../branding/README.md). Visual construction rules are maintained in the [Visual Engineering Design Standard](../visual-engineering/VISUAL_DESIGN_STANDARD.md). Website execution is maintained in the [Website Revamp Plan](../../website-revamp/README.md). This document may analyze these topics but must not create competing definitions.
+
 The framework connects four disciplines:
 
 1. **Brand architecture and relationship governance** — accurately represent how the central HTG identity relates to operating businesses, brands, partners, clients, referrals, and projects.
